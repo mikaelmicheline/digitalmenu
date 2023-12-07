@@ -1,2 +1,6 @@
 # digitalmenu
-Digital Menu App with Vue.js
+
+Digital Menu App
+
+Mikael M. Micheline
+
