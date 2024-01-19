@@ -72,4 +72,9 @@ p {
   font-size: 1rem;
 }
 
+a {
+  color: var(--font-1);
+  cursor: pointer;
+}
+
 </style>
