@@ -1,9 +1,10 @@
 <template>
   <header>
 
-    <router-link class="mainLink" to="/">Digital Menu</router-link>
+    <router-link class="main-link" to="/">Digital Menu</router-link>
 
     <div class="right">
+
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
@@ -12,7 +13,9 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
       <ThemeToggler />
+
     </div>
 
   </header>
@@ -36,7 +39,7 @@ header {
   padding: 0 10px;
 }
 
-header .mainLink {
+header .main-link {
   font-size: 1.72rem;
 }
 
