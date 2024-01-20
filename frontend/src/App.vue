@@ -28,6 +28,7 @@
   text-decoration: none;
   box-sizing: border-box;
   list-style: none;
+  line-height: 1.2;
 }
 
 html {
@@ -75,6 +76,66 @@ p {
 a {
   color: var(--font-1);
   cursor: pointer;
+}
+
+@media only screen and (min-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.86rem;
+  }
+
+  h3 {
+    font-size: 1.64rem;
+  }
+
+  h4 {
+    font-size: 1.52rem;
+  }
+
+  h5 {
+    font-size: 1.38rem;
+  }
+
+  h6 {
+    font-size: 1.24rem;
+  }
+
+  p {
+    font-size: 1.12rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+  }
+
+  h5 {
+    font-size: 1.6rem;
+  }
+
+  h6 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1.16rem;
+  }
 }
 
 </style>

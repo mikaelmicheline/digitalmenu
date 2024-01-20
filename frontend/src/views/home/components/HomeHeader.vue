@@ -75,13 +75,11 @@ li:hover {
   transform: translateY(-2px);
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 640px) {
   header {
     padding: 0 20px;
   }
-}
 
-@media only screen and (min-width: 640px) {
   nav {
     display: flex;
   }
