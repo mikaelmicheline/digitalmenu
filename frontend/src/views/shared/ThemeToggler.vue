@@ -1,11 +1,9 @@
 <template>
-  <button @click="toggleTheme"><img :src="imgSource" alt=""></button>
+  <button :class="selectedTheme" @click="toggleTheme"></button>
 </template>
 
 <script lang="ts" setup>
-import { computed, onMounted, ref } from 'vue'
-import lightThemeImage from '../../assets/light.svg'
-import darkThemeImage from '../../assets/dark.svg'
+import { onMounted, ref } from 'vue'
 
 type AvailableThemes = 'light' | 'dark'
 const selectedTheme = ref<AvailableThemes>('light')
@@ -29,19 +27,14 @@ function toggleTheme () {
   }
 }
 
-const imgSource = computed(() => {
-  if (selectedTheme.value === 'light') {
-    return lightThemeImage
-  } else {
-    return darkThemeImage
-  }
-})
-
 </script>
 
 <style scoped>
 button {
   background-color: inherit;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
   border: 0;
   cursor: pointer;
   display: flex;
@@ -49,15 +42,18 @@ button {
   align-items: center;
   width: 30px;
   height: 30px;
-}
-
-img {
-  width: 30px;
-  height: 30px;
   transition: opacity 0.2s ease-in-out;
 }
 
-img:hover {
+.light {
+  background-image: url(/src/assets/light.svg);
+}
+
+.dark {
+  background-image: url(/src/assets/dark.svg);
+}
+
+button:hover {
   opacity: 0.6;
 }
 

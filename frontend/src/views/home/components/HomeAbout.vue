@@ -100,7 +100,7 @@ h2 {
   }
 
   .about-content {
-    margin: 40px auto 0 auto;
+    margin: 50px auto 0 auto;
   }
 
   .about-image {
