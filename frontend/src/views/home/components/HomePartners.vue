@@ -1,0 +1,134 @@
+<template>
+  <section id="partners">
+
+  <h2>Partners</h2>
+
+  <div class="partners-content">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  </section>
+</template>
+
+<script lang="ts" setup>
+</script>
+
+<style scoped>
+
+section {
+  margin: 30px 10px 0 10px;
+  scroll-margin-top: 80px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.partners-content {
+  display: grid;
+  margin: 30px auto 0 auto;
+  width: 100%;
+  max-width: 900px;
+  grid-template-areas:
+    "p1 p1 e1 e1"
+    "p1 p1 p2 p2"
+    "p3 p3 p2 p2"
+    "p3 p3 p4 p4"
+    "p5 p5 p4 p4"
+    "p5 p5 p6 p6"
+    "e2 e2 p6 p6";
+  justify-items: center;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  row-gap: 10px;
+}
+
+.partners-content > div {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.partners-content > div::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--font-1);
+  display: block;
+}
+
+.partners-content > div:nth-child(1) {
+  grid-area: p1;
+}
+
+.partners-content > div:nth-child(2) {
+  grid-area: p2;
+}
+
+.partners-content > div:nth-child(3) {
+  grid-area: p3;
+}
+
+.partners-content > div:nth-child(4) {
+  grid-area: p4;
+}
+
+.partners-content > div:nth-child(5) {
+  grid-area: p5;
+}
+
+.partners-content > div:nth-child(6) {
+  grid-area: p6;
+}
+
+@media only screen and (min-width: 400px) {
+  .partners-content > div {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .partners-content {
+    margin: 40px auto 0 auto;
+    grid-template-areas:
+    "e1 p1 p1 p2 p2 p3 p3"
+    "p4 p4 p5 p5 p6 p6 e2";
+  }
+
+  .partners-content > div {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  section {
+    margin: 40px 20px 0 20px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  section {
+    margin: 40px 30px 0 30px;
+  }
+
+  .partners-content {
+    margin: 50px auto 0 auto;
+  }
+
+  .partners-content > div {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+</style>
