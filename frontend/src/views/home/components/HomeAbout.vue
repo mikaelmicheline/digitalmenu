@@ -20,6 +20,7 @@
         cupidatat duis sunt. Irure <em>labore minim</em> sint.
         Tempor quis commodo et reprehenderit irure ex sunt duis.
       </p>
+      <a href="#whatsapp">Contact us now</a>
     </div>
 
   </div>
@@ -55,13 +56,42 @@ h2 {
   flex: 1 1 50%;
 }
 
-.about-text > p:last-child {
+.about-text > p:last-of-type {
   margin-top: 20px;
 }
 
 .about-text em {
   font-style: italic;
   font-weight: 600;
+}
+
+.about-text a {
+  margin: 20px auto 0 auto;
+  padding: 6px 20px;
+  border: 1px solid var(--font-1);
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  width: 180px;
+}
+
+.about-text a:hover {
+  transform: scale(1.02);
+}
+
+.about-text a::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background-image: url(/src/assets/whatsapp.svg);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .about-image-container {

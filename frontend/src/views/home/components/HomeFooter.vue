@@ -7,9 +7,9 @@
         <p>Your menu. Everywhere.</p>
       </div>
       <div class="social-links">
-        <a class="social-link"><span id="instagram"></span></a>
-        <a class="social-link"><span id="facebook"></span></a>
-        <a class="social-link"><span id="youtube"></span></a>
+        <a href="#instagram" class="social-link"><span id="instagram"></span></a>
+        <a href="#facebook" class="social-link"><span id="facebook"></span></a>
+        <a href="#youtube" class="social-link"><span id="youtube"></span></a>
       </div>
     </div>
 
