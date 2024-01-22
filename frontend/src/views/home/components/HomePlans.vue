@@ -19,7 +19,7 @@ import HomePlan from './HomePlan.vue'
 <style scoped>
 
 section {
-  margin: 30px 10px 0 10px;
+  margin: 50px 10px 0 10px;
   scroll-margin-top: 80px;
 }
 
@@ -31,7 +31,7 @@ h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 50px auto 0 auto;
+  margin: 10px auto 0 auto;
   max-width: 900px;
   justify-content: center;
   align-items: center;
@@ -39,21 +39,21 @@ h2 {
 
 @media only screen and (min-width: 640px) {
   section {
-    margin: 40px 20px 0 20px;
+    margin: 60px 20px 0 20px;
   }
 
   .plans-content {
-    margin: 60px auto 0 auto;
+    margin: 20px auto 0 auto;
   }
 }
 
 @media only screen and (min-width: 800px) {
   section {
-    margin: 40px 30px 0 30px;
+    margin: 70px 30px 0 30px;
   }
 
   .plans-content {
-    margin: 70px auto 0 auto;
+    margin: 30px auto 0 auto;
   }
 }
 

@@ -33,9 +33,8 @@ const planInfo = defineProps<{
   color: var(--font-2);
   max-width: 250px;
   min-width: 220px;
-  margin: 0 16px;
+  margin: 40px 16px 0 16px;
   flex: 1 1 220px;
-  margin-bottom: 40px;
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out;
   position: relative;

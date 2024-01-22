@@ -78,6 +78,44 @@ a {
   cursor: pointer;
 }
 
+label,
+button,
+textarea,
+select,
+input {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--font-1);
+}
+
+textarea:focus,
+select:focus,
+input:focus {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--font-1);
+}
+
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] input {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--background-1);
+}
+
+:root[data-theme="dark"] textarea:focus,
+:root[data-theme="dark"] select:focus,
+:root[data-theme="dark"] input:focus {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--background-1);
+}
+
+button {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 640px) {
   h1 {
     font-size: 2rem;

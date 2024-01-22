@@ -10,6 +10,7 @@
     </div>
 
     <div class="about-text">
+
       <p>
         Amet magna ipsum id esse mollit <em>reprehenderit</em> est non elit aute labore.
         Exercitation sit nisi aute excepteur. Do officia id amet adipisicing tempor cillum.
@@ -20,7 +21,9 @@
         cupidatat duis sunt. Irure <em>labore minim</em> sint.
         Tempor quis commodo et reprehenderit irure ex sunt duis.
       </p>
-      <a href="#whatsapp">Contact us now</a>
+
+      <WhatsAppLink>Contact us now</WhatsAppLink>
+
     </div>
 
   </div>
@@ -29,12 +32,13 @@
 </template>
 
 <script lang="ts" setup>
+import WhatsAppLink from './WhatsAppLink.vue'
 </script>
 
 <style scoped>
 
 section {
-  margin: 30px 10px 0 10px;
+  margin: 50px 10px 0 10px;
   scroll-margin-top: 80px;
 }
 
@@ -57,41 +61,12 @@ h2 {
 }
 
 .about-text > p:last-of-type {
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .about-text em {
   font-style: italic;
   font-weight: 600;
-}
-
-.about-text a {
-  margin: 20px auto 0 auto;
-  padding: 6px 20px;
-  border: 1px solid var(--font-1);
-  border-radius: 8px;
-  transition: transform 0.2s ease-in-out;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
-  align-items: center;
-  width: 180px;
-}
-
-.about-text a:hover {
-  transform: scale(1.02);
-}
-
-.about-text a::before {
-  content: "";
-  display: inline-block;
-  width: 28px;
-  height: 28px;
-  background-image: url(/src/assets/whatsapp.svg);
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
 }
 
 .about-image-container {
@@ -112,7 +87,7 @@ h2 {
 
 @media only screen and (min-width: 640px) {
   section {
-    margin: 40px 20px 0 20px;
+    margin: 60px 20px 0 20px;
   }
 
   .about-content {
@@ -126,7 +101,7 @@ h2 {
 
 @media only screen and (min-width: 800px) {
   section {
-    margin: 40px 30px 0 30px;
+    margin: 70px 30px 0 30px;
   }
 
   .about-content {

@@ -5,6 +5,7 @@
     <HomeAbout />
     <HomePartners />
     <HomePlans />
+    <HomeContact />
     <HomeFooter />
   </main>
 </template>
@@ -15,6 +16,7 @@ import HomeHero from './components/HomeHero.vue'
 import HomeAbout from './components/HomeAbout.vue'
 import HomePartners from './components/HomePartners.vue'
 import HomePlans from './components/HomePlans.vue'
+import HomeContact from './components/HomeContact.vue'
 import HomeFooter from './components/HomeFooter.vue'
 </script>
 
