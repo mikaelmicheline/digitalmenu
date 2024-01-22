@@ -33,7 +33,7 @@
 
       <HomeContactSubmitButton :disabled="messageSent">{{ submitFormButtonMessage }}</HomeContactSubmitButton>
       <span> or </span>
-      <WhatsAppLink>Use WhatsApp</WhatsAppLink>
+      <WhatsAppLink>Use WhatsApp Web</WhatsAppLink>
 
     </footer>
 
