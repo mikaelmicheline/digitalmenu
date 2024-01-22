@@ -4,12 +4,30 @@
   <h2>Partners</h2>
 
   <div class="partners-content">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div class="partner">
+      <a href="#partner">
+      </a>
+    </div>
+    <div class="partner">
+      <a href="#partner">
+      </a>
+    </div>
+    <div class="partner">
+      <a href="#partner">
+      </a>
+    </div>
+    <div class="partner">
+      <a href="#partner">
+      </a>
+    </div>
+    <div class="partner">
+      <a href="#partner">
+      </a>
+    </div>
+    <div class="partner">
+      <a href="#partner">
+      </a>
+    </div>
   </div>
 
   </section>
@@ -49,20 +67,41 @@ h2 {
   row-gap: 10px;
 }
 
-.partners-content > div {
+.partner {
   position: relative;
   width: 120px;
   height: 120px;
 }
 
-.partners-content > div::before {
+.partner > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.partner > a::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: var(--font-1);
+  background-color: var(--background-2);
+  background-image: url(/src/assets/restaurant-logo-light.svg);
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
   display: block;
+  z-index: -1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.partner > a:hover::before {
+  opacity: 0.7;
+}
+
+:root[data-theme="dark"] .partner > a::before {
+  background-image: url(/src/assets/restaurant-logo-dark.svg);
 }
 
 .partners-content > div:nth-child(1) {
