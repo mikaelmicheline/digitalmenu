@@ -20,7 +20,6 @@
 <script lang="ts" setup>
 function toggleTheme () {
   const isLight = document.documentElement.getAttribute('data-theme') !== 'dark'
-  console.log(isLight)
   if (isLight) {
     document.documentElement.setAttribute('data-theme', 'dark')
   } else {
