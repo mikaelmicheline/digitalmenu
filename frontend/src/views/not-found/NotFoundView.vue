@@ -3,9 +3,9 @@
     <section>
       <h1>Oops!</h1>
       <p>Page not found</p>
-    </section>
-    <section>
-      <!-- <BackButton></BackButton> -->
+      <button type="button" @click="$router.go(-1)">
+        &lt; Back
+      </button>
     </section>
   </main>
 </template>
@@ -20,9 +20,21 @@ main {
   align-items: center;
 }
 
-h1,
-p {
+section {
   text-align: center;
-  margin: 20px 0;
+}
+
+section *:nth-child(1),
+section *:nth-child(2) {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: inherit;
+  border: 0;
+}
+
+button:hover {
+  text-decoration: underline;
 }
 </style>
