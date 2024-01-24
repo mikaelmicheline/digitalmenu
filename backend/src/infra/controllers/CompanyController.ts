@@ -18,7 +18,7 @@ export default class CompanyController {
           return
         }
 
-        res.json(company)
+        res.status(200).json(company)
       }
     ))
 

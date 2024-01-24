@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import CompanyController from './infra/controllers/CompanyController'
 import CompanyRepository from './infra/repositories/CompanyRepository'
 import GetCompanyById from './application/use-cases/company/GetCompanyById'
@@ -15,6 +16,7 @@ const getProductById = new GetProductById(productRepository)
 const getAllProductsByCompanyId = new GetAllProductsByCompanyId(productRepository)
 
 const app = express()
+app.use(cors())
 app.use(express.json())
 
 app.get('/', function (req, res) {
