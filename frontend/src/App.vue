@@ -142,7 +142,7 @@ button {
   }
 
   p {
-    font-size: 1.12rem;
+    font-size: 1.06rem;
   }
 }
 
@@ -172,7 +172,7 @@ button {
   }
 
   p {
-    font-size: 1.16rem;
+    font-size: 1.1rem;
   }
 }
 
