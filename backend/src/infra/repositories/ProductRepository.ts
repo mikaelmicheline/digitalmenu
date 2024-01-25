@@ -11,7 +11,7 @@ export default class ProductRepository implements IProductRepository {
   }
 }
 
-const products = [
+const products: Product[] = [
   {
     productId: '435da6bc-919c-4a22-a58f-454e2a09fb28',
     companyId: 'WonderCakes',

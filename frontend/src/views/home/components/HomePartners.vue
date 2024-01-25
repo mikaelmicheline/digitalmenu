@@ -5,28 +5,22 @@
 
   <div class="partners-content">
     <div class="partner">
-      <a href="#partner">
-      </a>
+      <router-link to="/company/WonderCakes"></router-link>
     </div>
     <div class="partner">
-      <a href="#partner">
-      </a>
+      <router-link to="/company/WonderCakes"></router-link>
     </div>
     <div class="partner">
-      <a href="#partner">
-      </a>
+      <router-link to="/company/WonderCakes"></router-link>
     </div>
     <div class="partner">
-      <a href="#partner">
-      </a>
+      <router-link to="/company/WonderCakes"></router-link>
     </div>
     <div class="partner">
-      <a href="#partner">
-      </a>
+      <router-link to="/company/WonderCakes"></router-link>
     </div>
     <div class="partner">
-      <a href="#partner">
-      </a>
+      <router-link to="/company/WonderCakes"></router-link>
     </div>
   </div>
 

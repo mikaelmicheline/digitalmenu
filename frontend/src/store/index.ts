@@ -1,14 +1,10 @@
 import { createStore } from 'vuex'
+import CompanyModule from './CompanyModule'
+import DumbModule from './DumbModule'
 
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    company: CompanyModule,
+    dumb: DumbModule
   }
 })

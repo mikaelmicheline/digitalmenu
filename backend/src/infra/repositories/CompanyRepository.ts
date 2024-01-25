@@ -7,7 +7,7 @@ export default class CompanyRepository implements ICompanyRepository {
   }
 }
 
-const companies = [
+const companies: Company[] = [
   {
     companyId: 'WonderCakes',
     name: 'Wonder Cakes',
