@@ -9,8 +9,8 @@ export default class CompanyRepository implements ICompanyRepository {
 
 const companies: Company[] = [
   {
-    companyId: 'WonderCakes',
-    name: 'Wonder Cakes',
+    companyId: 'MarvelousCakes',
+    name: 'Marvelous Cakes',
     isOpen: true
   }
 ]

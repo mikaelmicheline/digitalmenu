@@ -1,30 +1,24 @@
 
 <template>
-  <!-- <HomeHeader />
-  <main>
-    <HomeHero />
-    <HomeAbout />
-    <HomePartners />
-    <HomePlans />
-    <HomeContact />
-    <HomeFooter />
-  </main> -->
+  <CompanyHeader :company-name="company?.name" />
+   <main>
+
+  </main>
   <section>
-    {{ company ? company.name : '---' }}
-    <p>
-      {{ company ? company.isOpen ? 'OPEN NOW' : 'CLOSED' : '---' }}
-    </p>
-    <div>
-      <router-link to="/">home</router-link>
-    </div>
+
+    <Skeleton height="120px" width="600px" background-color="var(--background-2)" />
+    <br>
+    <Skeleton height="120px" width="600px" background-color="var(--background-2)" border-radius="20px" />
+
   </section>
 </template>
 
 <script lang="ts" setup>
-import { useStore } from 'vuex'
-import { onMounted, ref } from 'vue'
+import CompanyHeader from '@/views/company/components/CompanyHeader.vue'
 import CompanyModel from '@/models/CompanyModel'
 import CompanyService from '@/services/CompanyService'
+import { useStore } from 'vuex'
+import { onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 const store = useStore()

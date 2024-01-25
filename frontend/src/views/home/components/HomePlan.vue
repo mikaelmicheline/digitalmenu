@@ -19,11 +19,13 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 
-const planInfo = defineProps<{
+interface Props {
   name: string;
   benefits: string[];
   valuePerMonth: string;
-}>()
+}
+
+const planInfo = defineProps<Props>()
 
 </script>
 

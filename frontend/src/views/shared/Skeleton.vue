@@ -11,13 +11,15 @@ interface Props {
   height?: string
   display?: string
   backgroundColor?: string
+  borderRadius?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   width: '100%',
   height: '100%',
   display: 'inline-block',
-  backgroundColor: 'black'
+  backgroundColor: 'black',
+  borderRadius: '0'
 })
 
 onMounted(() => {
@@ -34,6 +36,7 @@ div {
   background-color: v-bind(backgroundColor);
   position: relative;
   overflow: hidden;
+  border-radius: v-bind(borderRadius);
 }
 
 div::before {
@@ -50,11 +53,11 @@ div::before {
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
   animation-direction: normal;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
 }
 
 :root[data-theme="dark"] div::before {
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 
 @-webkit-keyframes Animation {

@@ -5,22 +5,22 @@
 
   <div class="partners-content">
     <div class="partner">
-      <router-link to="/company/WonderCakes"></router-link>
+      <router-link to="/company/MarvelousCakes"></router-link>
     </div>
     <div class="partner">
-      <router-link to="/company/WonderCakes"></router-link>
+      <router-link to="/company/MarvelousCakes"></router-link>
     </div>
     <div class="partner">
-      <router-link to="/company/WonderCakes"></router-link>
+      <router-link to="/company/MarvelousCakes"></router-link>
     </div>
     <div class="partner">
-      <router-link to="/company/WonderCakes"></router-link>
+      <router-link to="/company/MarvelousCakes"></router-link>
     </div>
     <div class="partner">
-      <router-link to="/company/WonderCakes"></router-link>
+      <router-link to="/company/MarvelousCakes"></router-link>
     </div>
     <div class="partner">
-      <router-link to="/company/WonderCakes"></router-link>
+      <router-link to="/company/MarvelousCakes"></router-link>
     </div>
   </div>
 
@@ -80,7 +80,7 @@ h2 {
   height: 100%;
   border-radius: 50%;
   background-color: var(--background-2);
-  background-image: url(/src/assets/restaurant-logo-light.svg);
+  background-image: url(/src/assets/menu-light.svg);
   background-position-x: center;
   background-position-y: center;
   background-size: 60%;
@@ -95,7 +95,7 @@ h2 {
 }
 
 :root[data-theme="dark"] .partner > a::before {
-  background-image: url(/src/assets/restaurant-logo-dark.svg);
+  background-image: url(/src/assets/menu-dark.svg);
 }
 
 .partners-content > div:nth-child(1) {
