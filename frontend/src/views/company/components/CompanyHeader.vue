@@ -60,12 +60,6 @@ ul {
 @media only screen and (min-width: 640px) {
   header {
     padding: 12px 20px;
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  header {
-    padding: 16px 30px;
     flex-direction: row;
   }
 
@@ -81,6 +75,12 @@ ul {
 
   ul {
     justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  header {
+    padding: 16px 30px;
   }
 }
 
