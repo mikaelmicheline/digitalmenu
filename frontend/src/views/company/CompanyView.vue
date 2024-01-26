@@ -1,12 +1,26 @@
 <template>
+
   <CompanyHeader :company-name="company?.name" />
+
   <main>
+
+    <router-view v-slot="slotProps">
+      <transition name="route" mode="out-in">
+        <component :is="slotProps.Component"></component>
+      </transition>
+    </router-view>
+
+    <div class="space"></div>
+
+    <CompanyFooter></CompanyFooter>
+
   </main>
   <NotificationList />
 </template>
 
 <script lang="ts" setup>
 import CompanyHeader from '@/views/company/components/CompanyHeader.vue'
+import CompanyFooter from '@/views/company/components/CompanyFooter.vue'
 import CompanyModel from '@/models/CompanyModel'
 import CompanyService from '@/services/CompanyService'
 import { useStore } from 'vuex'
@@ -90,12 +104,17 @@ watch(company, async () => {
 </script>
 
 <style scoped>
-section{
+section {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.space {
+  width: 100%;
+  height: 600px;
 }
 </style>

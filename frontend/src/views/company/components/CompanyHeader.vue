@@ -35,9 +35,6 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  z-index: 2;
-  top: 0;
   padding: 10px 10px;
 }
 
