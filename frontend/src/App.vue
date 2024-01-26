@@ -6,19 +6,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --background-1: #FFFDF7;
-  --background-2: #F0F0E7;
+   --white-1: #FFFDF7;
+   --white-2: #F0F0E7;
 
-  --font-1: #5B5B5B;
-  --font-2: #494744;
+   --dark-gray-1: #5B5B5B;
+   --dark-gray-2: #494744;
+
+  --background-1: var(--white-1);
+  --background-2: var(--white-2);
+
+  --font-1: var(--dark-gray-1);
+  --font-2: var(--dark-gray-2);
 }
 
 [data-theme="dark"] {
-  --background-1: #5B5B5B;
-  --background-2: #494744;
+  --background-1: var(--dark-gray-1);
+  --background-2: var(--dark-gray-2);
 
-  --font-1: #FFFDF7;
-  --font-2: #F0F0E7;
+  --font-1: var(--white-1);
+  --font-2: var(--white-2);
 }
 
 * {

@@ -1,16 +1,8 @@
-
 <template>
   <CompanyHeader :company-name="company?.name" />
-   <main>
-
+  <main>
   </main>
-  <section>
-
-    <Skeleton height="120px" width="600px" background-color="var(--background-2)" />
-    <br>
-    <Skeleton height="120px" width="600px" background-color="var(--background-2)" border-radius="20px" />
-
-  </section>
+  <NotificationList />
 </template>
 
 <script lang="ts" setup>
@@ -18,7 +10,7 @@ import CompanyHeader from '@/views/company/components/CompanyHeader.vue'
 import CompanyModel from '@/models/CompanyModel'
 import CompanyService from '@/services/CompanyService'
 import { useStore } from 'vuex'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 const store = useStore()
@@ -26,6 +18,7 @@ const router = useRouter()
 const route = useRoute()
 
 const company = ref<CompanyModel>()
+const isOpen = ref<boolean>()
 
 async function refreshCompanyData (): Promise<void> {
   const { companyId } = route.params
@@ -62,6 +55,36 @@ async function refreshCompanyData (): Promise<void> {
 
 onMounted(async () => {
   refreshCompanyData()
+})
+
+watch(company, async () => {
+  if (company.value?.isOpen === isOpen.value) return
+
+  isOpen.value = company.value?.isOpen
+
+  if (isOpen.value) {
+    store.dispatch({
+      type: 'notifications/notify',
+      value: {
+        notification: {
+          message: 'HEY, WE ARE NOW OPEN!',
+          type: 'success'
+        }
+      }
+    })
+  }
+
+  if (!isOpen.value) {
+    store.dispatch({
+      type: 'notifications/notify',
+      value: {
+        notification: {
+          message: 'SORRY, WE ARE CLOSED NOW',
+          type: 'warning'
+        }
+      }
+    })
+  }
 })
 
 </script>

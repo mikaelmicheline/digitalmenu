@@ -10,7 +10,7 @@ const getters = <GetterTree<CompanyModuleState, unknown>>{
   getCompany: (state: CompanyModuleState) => (companyId: string): CompanyModel | undefined => {
     if (state && state.company?.companyId === companyId) {
       const minutesPassedSinceCompanyWasFetched = diffMinutes(state.company.fetchedAt, new Date())
-      if (minutesPassedSinceCompanyWasFetched < 0) return state.company
+      if (minutesPassedSinceCompanyWasFetched < 1) return state.company
     }
   }
 }
