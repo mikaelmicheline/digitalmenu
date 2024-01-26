@@ -40,13 +40,27 @@ ul {
 
 .notification-list-enter-active,
 .notification-list-leave-active {
-  transition: all 4s ease;
+  transition: all 2s ease;
 }
 
 .notification-list-enter-to,
 .notification-list-leave-from {
   opacity: 1;
   transform: translateX(0px);
+}
+
+@media only screen and (min-width: 640px) {
+  ul {
+    margin: 0 40px 40px 0;
+    width: 280px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  ul {
+    margin: 0 60px 60px 0;
+    width: 300px;
+  }
 }
 
 </style>
