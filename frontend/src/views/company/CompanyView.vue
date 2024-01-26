@@ -104,17 +104,52 @@ watch(company, async () => {
 </script>
 
 <style scoped>
-section {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+main {
+  margin: 20px 10px 0px 10px;
 }
 
 .space {
   width: 100%;
   height: 600px;
+}
+
+.route-enter-from {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+.route-enter-active {
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  opacity: 1;
+}
+
+.route-enter-to {
+  transform: translateX(0);
+}
+
+.route-leave-from {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.route-leave-active {
+  transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+}
+
+.route-leave-to {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
+@media only screen and (min-width: 640px) {
+  main {
+    margin: 30px 20px 0px 20px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  main {
+    margin: 30px 30px 0px 30px;
+  }
 }
 </style>

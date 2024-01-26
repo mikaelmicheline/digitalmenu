@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/home/HomeView.vue'
-import DisplayView from '../views/display/DisplayView.vue'
 import NotFoundView from '../views/not-found/NotFoundView.vue'
 import CompanyView from '../views/company/CompanyView.vue'
+import CompanyMenuView from '../views/company/CompanyMenuView.vue'
+import CompanyCartView from '../views/company/CompanyCartView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,14 +12,19 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView
   },
   {
-    path: '/display',
-    name: 'display',
-    component: DisplayView
-  },
-  {
     path: '/company/:companyId',
     name: 'company',
-    component: CompanyView
+    component: CompanyView,
+    children: [
+      {
+        path: '',
+        component: CompanyMenuView
+      },
+      {
+        path: 'cart',
+        component: CompanyCartView
+      }
+    ]
   },
   {
     path: '/:notFound(.*)',

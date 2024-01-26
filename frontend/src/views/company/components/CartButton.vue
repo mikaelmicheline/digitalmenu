@@ -1,12 +1,12 @@
 <template>
-  <button></button>
+  <router-link :to="`/company/${$route.params.companyId}/cart`"></router-link>
 </template>
 
 <script lang="ts" setup>
 </script>
 
 <style scoped>
-button {
+a {
   background-color: inherit;
   background-size: cover;
   background-position-x: center;
@@ -22,11 +22,11 @@ button {
   background-image: url(/src/assets/cart-light.svg);
 }
 
-:root[data-theme="dark"] button {
+:root[data-theme="dark"] a {
   background-image: url(/src/assets/cart-dark.svg);
 }
 
-button:hover {
+a:hover {
   opacity: 0.6;
 }
 
