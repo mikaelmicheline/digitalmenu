@@ -166,7 +166,7 @@ const products: Product[] = [
     productId: '30ce2608-1574-451d-aa50-4561b7f809e5',
     companyId: 'MarvelousCakes',
     code: 'cake-16',
-    name: 'Diamond Wedding Cake',
+    name: 'Diamond Wedding Cake - MOST POPULAR',
     description: 'Adipisicing non veniam sint quis pariatur. Eu velit ea consequat sit reprehenderit dolor. Anim reprehenderit nulla occaecat ea Lorem Lorem qui cillum est. Dolor eu veniam occaecat laborum velit ipsum. Voluptate consectetur quis deserunt sunt est eu irure veniam sint cillum ex sunt commodo amet.',
     category: 'Wedding Cakes',
     salePrice: 120,

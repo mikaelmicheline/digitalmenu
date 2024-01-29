@@ -1,12 +1,12 @@
 <template>
-  <router-link :to="`/company/${$route.params.companyId}/cart`"></router-link>
+  <button />
 </template>
 
 <script lang="ts" setup>
 </script>
 
 <style scoped>
-a {
+button {
   background-color: inherit;
   background-size: cover;
   background-position-x: center;
@@ -16,17 +16,17 @@ a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   transition: opacity 0.2s ease-in-out;
   background-image: url(/src/assets/plus-light.svg);
 }
 
-:root[data-theme="dark"] a {
+:root[data-theme="dark"] button {
   background-image: url(/src/assets/plus-dark.svg);
 }
 
-a:hover {
+button:hover {
   opacity: 0.6;
 }
 

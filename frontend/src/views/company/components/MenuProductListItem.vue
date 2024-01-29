@@ -100,11 +100,11 @@ const pictureUrl = computed(() => {
 .item-info {
   width: 100%;
   padding: 6px;
-  height: 132px;
+  height: 100px;
 }
 
 .item-first-row {
-  height: 50%;
+  height: 46%;
   width: 100%;
 }
 
@@ -126,7 +126,7 @@ const pictureUrl = computed(() => {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-end;
-  height: 50%;
+  height: 54%;
 }
 
 .item-second-row > p {
