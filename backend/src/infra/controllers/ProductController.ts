@@ -2,6 +2,7 @@ import express, { type Express } from 'express'
 import type IGetProductById from 'src/application/interfaces/product/IGetProductById'
 import asyncWrapper from '../utils/asyncWrapper'
 import type IGetAllProductsByCompanyId from 'src/application/interfaces/product/IGetAllProductsByCompanyId'
+import sleep from '../utils/sleep'
 
 export default class ProductController {
   constructor (
@@ -30,6 +31,8 @@ export default class ProductController {
       async (req, res) => {
         const { companyId } = req.params
         const products = await this.getAllProductsByCompanyId.execute({ companyId })
+
+        await sleep(1500)
 
         res.json(products)
       }

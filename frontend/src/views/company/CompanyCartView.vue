@@ -1,9 +1,9 @@
 <template>
-  <CompanyCartProductList />
+  <CartProductList />
 </template>
 
 <script lang="ts" setup>
-import CompanyCartProductList from '@/views/company/components/CompanyCartProductList.vue'
+import CartProductList from '@/views/company/components/CartProductList.vue'
 </script>
 
 <style scoped>

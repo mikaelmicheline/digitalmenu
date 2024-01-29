@@ -18,10 +18,12 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
+        name: 'companyMenu',
         component: CompanyMenuView
       },
       {
         path: 'cart',
+        name: 'companyCart',
         component: CompanyCartView
       }
     ]

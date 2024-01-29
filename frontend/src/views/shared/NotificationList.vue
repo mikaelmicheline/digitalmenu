@@ -40,7 +40,7 @@ ul {
 
 .notification-list-enter-active,
 .notification-list-leave-active {
-  transition: all 2s ease;
+  transition: all 2.2s ease;
 }
 
 .notification-list-enter-to,

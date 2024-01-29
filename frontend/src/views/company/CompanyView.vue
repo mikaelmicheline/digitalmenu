@@ -10,12 +10,12 @@
       </transition>
     </router-view>
 
-    <div class="space"></div>
-
-    <CompanyFooter></CompanyFooter>
-
   </main>
+
+  <CompanyFooter></CompanyFooter>
+
   <NotificationList />
+
 </template>
 
 <script lang="ts" setup>
@@ -106,11 +106,7 @@ watch(company, async () => {
 <style scoped>
 main {
   margin: 20px 10px 0px 10px;
-}
-
-.space {
-  width: 100%;
-  height: 600px;
+  min-height: 800px;
 }
 
 .route-enter-from {

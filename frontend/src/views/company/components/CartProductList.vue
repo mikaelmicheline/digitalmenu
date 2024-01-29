@@ -5,7 +5,7 @@
 <style scoped>
 section {
   width: 100%;
-  height: 500px;
-  background-color: burlywood;
+  height: 1000px;
+  background-color: firebrick;
 }
 </style>
