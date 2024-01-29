@@ -37,7 +37,7 @@ const planInfo = defineProps<Props>()
   min-width: 220px;
   margin: 40px 16px 0 16px;
   flex: 1 1 220px;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--default-box-shadow);
   transition: transform 0.2s ease-in-out;
   position: relative;
   border-radius: 4px;
@@ -54,7 +54,7 @@ const planInfo = defineProps<Props>()
   background-color: var(--font-1);
   width: 100%;
   margin: 0 auto;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--default-box-shadow);
   border-radius: 4px;
   padding: 4px 0;
 }
@@ -62,7 +62,7 @@ const planInfo = defineProps<Props>()
 .plan-content header p {
   color: var(--background-2);
   font-size: 2.1rem;
-  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: var(--default-box-shadow);
   font-weight: 500;
   text-align: center;
   padding: 4px 0;
@@ -86,7 +86,7 @@ const planInfo = defineProps<Props>()
 
 .plan-content footer p:first-child {
   font-size: 2.4rem;
-  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: var(--default-box-shadow);
   font-weight: 500;
   text-align: center;
 }

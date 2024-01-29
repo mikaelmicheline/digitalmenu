@@ -17,6 +17,8 @@
 
   --font-1: var(--dark-gray-1);
   --font-2: var(--dark-gray-2);
+
+  --default-box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="dark"] {

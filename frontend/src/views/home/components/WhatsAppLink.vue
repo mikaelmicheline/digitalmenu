@@ -15,7 +15,7 @@ a {
   border: 1px solid var(--font-1);
   border-radius: 8px;
   transition: transform 0.2s ease-in-out;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--default-box-shadow);
   display: inline-flex;
   justify-content: center;
   align-items: center;

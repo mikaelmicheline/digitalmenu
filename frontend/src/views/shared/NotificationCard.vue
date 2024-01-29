@@ -28,7 +28,7 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--default-box-shadow);
 }
 
 .success {
