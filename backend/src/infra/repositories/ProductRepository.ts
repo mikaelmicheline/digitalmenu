@@ -159,7 +159,7 @@ const products: Product[] = [
     name: 'Lovely Wedding Cake',
     description: 'Adipisicing non veniam sint quis pariatur. Eu velit ea consequat sit reprehenderit dolor. Anim reprehenderit nulla occaecat ea Lorem Lorem qui cillum est. Dolor eu veniam occaecat laborum velit ipsum. Voluptate consectetur quis deserunt sunt est eu irure veniam sint cillum ex sunt commodo amet.',
     category: 'Wedding Cakes',
-    salePrice: 60,
+    salePrice: 80,
     picture: 'products/MarvelousCakes/7e369900-f4c4-4a39-9135-a3bbed68bc21.jpg'
   },
   {
@@ -169,7 +169,7 @@ const products: Product[] = [
     name: 'Diamond Wedding Cake',
     description: 'Adipisicing non veniam sint quis pariatur. Eu velit ea consequat sit reprehenderit dolor. Anim reprehenderit nulla occaecat ea Lorem Lorem qui cillum est. Dolor eu veniam occaecat laborum velit ipsum. Voluptate consectetur quis deserunt sunt est eu irure veniam sint cillum ex sunt commodo amet.',
     category: 'Wedding Cakes',
-    salePrice: 80,
+    salePrice: 120,
     picture: 'products/MarvelousCakes/30ce2608-1574-451d-aa50-4561b7f809e5.jpg'
   },
   {
@@ -179,7 +179,7 @@ const products: Product[] = [
     name: 'Fantastic Wedding Cake',
     description: 'Adipisicing non veniam sint quis pariatur. Eu velit ea consequat sit reprehenderit dolor. Anim reprehenderit nulla occaecat ea Lorem Lorem qui cillum est. Dolor eu veniam occaecat laborum velit ipsum. Voluptate consectetur quis deserunt sunt est eu irure veniam sint cillum ex sunt commodo amet.',
     category: 'Wedding Cakes',
-    salePrice: 80,
+    salePrice: 120,
     picture: 'products/MarvelousCakes/4973eca4-5bee-4ede-ab6e-5248864b2f73.jpg'
   },
   {
@@ -189,7 +189,7 @@ const products: Product[] = [
     name: 'Affection Wedding Cake',
     description: 'Adipisicing non veniam sint quis pariatur. Eu velit ea consequat sit reprehenderit dolor. Anim reprehenderit nulla occaecat ea Lorem Lorem qui cillum est. Dolor eu veniam occaecat laborum velit ipsum. Voluptate consectetur quis deserunt sunt est eu irure veniam sint cillum ex sunt commodo amet.',
     category: 'Wedding Cakes',
-    salePrice: 60,
+    salePrice: 80,
     picture: 'products/MarvelousCakes/026d5269-a07d-40d8-9899-db1046d5966b.jpg'
   },
   {
@@ -199,7 +199,7 @@ const products: Product[] = [
     name: 'Gluten-Free Chocolate Cake',
     description: 'Adipisicing non veniam sint quis pariatur. Eu velit ea consequat sit reprehenderit dolor. Anim reprehenderit nulla occaecat ea Lorem Lorem qui cillum est. Dolor eu veniam occaecat laborum velit ipsum. Voluptate consectetur quis deserunt sunt est eu irure veniam sint cillum ex sunt commodo amet.',
     category: 'Gluten-Free Cakes',
-    salePrice: 60,
+    salePrice: 80,
     picture: 'products/MarvelousCakes/abe1a462-aab2-4d1d-bde7-09bacb9b4079.jpg'
   },
   {
@@ -209,17 +209,17 @@ const products: Product[] = [
     name: 'Gluten-Free White Chocolate Cake',
     description: 'Adipisicing non veniam sint quis pariatur. Eu velit ea consequat sit reprehenderit dolor. Anim reprehenderit nulla occaecat ea Lorem Lorem qui cillum est. Dolor eu veniam occaecat laborum velit ipsum. Voluptate consectetur quis deserunt sunt est eu irure veniam sint cillum ex sunt commodo amet.',
     category: 'Gluten-Free Cakes',
-    salePrice: 60,
+    salePrice: 80,
     picture: 'products/MarvelousCakes/22e14a61-35d1-49c9-8550-ec54aed13b48.jpg'
   },
   {
     productId: '3913f024-fcb2-4e6d-8472-e212247e4943',
     companyId: 'MarvelousCakes',
     code: 'cake-21',
-    name: 'Gluten-Free Strawberry Cake',
+    name: 'Gluten-Free Strawberry Cake - NEW CAKE! 20% OFF TODAY ONLY!',
     description: 'Adipisicing non veniam sint quis pariatur. Eu velit ea consequat sit reprehenderit dolor. Anim reprehenderit nulla occaecat ea Lorem Lorem qui cillum est. Dolor eu veniam occaecat laborum velit ipsum. Voluptate consectetur quis deserunt sunt est eu irure veniam sint cillum ex sunt commodo amet.',
     category: 'Gluten-Free Cakes',
-    salePrice: 60,
+    salePrice: 64,
     picture: 'products/MarvelousCakes/3913f024-fcb2-4e6d-8472-e212247e4943.jpg'
   }
 ]

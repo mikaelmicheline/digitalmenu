@@ -2,12 +2,17 @@
 
   <div class="item-wrapper">
     <component :is="isSkeleton ? 'Skeleton' : 'div'" :class="itemClassList">
-      <div class="picture"></div>
-      <div class="info" v-if="!isSkeleton">
-        <p>{{ data?.name }}</p>
-        <p>{{ data?.salePrice }}</p>
-        <p>details</p>
-        <p>add to Cart</p>
+      <div class="item-picture">
+        <router-link v-if="!isSkeleton" :to="`/company/${$route.params.companyId}/product/${data?.productId}`"></router-link>
+      </div>
+      <div class="item-info">
+        <div class="item-first-row" v-if="!isSkeleton">
+          <router-link :to="`/company/${$route.params.companyId}/product/${data?.productId}`">{{ data?.name }}</router-link>
+        </div>
+        <div class="item-second-row" v-if="!isSkeleton">
+          <p>{{ `\$${data?.salePrice}` }}</p>
+          <AddToCartButton />
+        </div>
       </div>
     </component>
   </div>
@@ -17,6 +22,7 @@
 <script lang="ts" setup>
 import { computed, defineProps, withDefaults } from 'vue'
 import ProductModel from '@/models/ProductModel'
+import AddToCartButton from './AddToCartButton.vue'
 import config from '@/config'
 
 type Props = {
@@ -51,23 +57,21 @@ const pictureUrl = computed(() => {
 }
 
 .item-base {
-  height: 360px;
   background-color: var(--background-2);
   box-shadow: var(--default-box-shadow);
   overflow: hidden;
   width: 100%;
-  max-width: 400px;
   margin: 0 auto;
 }
 
-.item-skeleton > .picture {
+.item-skeleton > .item-picture {
   width: 100%;
-  height: 60%;
+  height: 190px;
   padding: 12px 12px 0 12px;
 
 }
 
-.item-skeleton > .picture::before {
+.item-skeleton > .item-picture::before {
   content: "";
   display: block;
   width: 100%;
@@ -75,17 +79,58 @@ const pictureUrl = computed(() => {
   background-color: var(--background-1);
 }
 
-.item-product > .picture {
+.item-product > .item-picture {
   width: 100%;
-  height: 60%;
+  height: 190px;
   background-image: v-bind(pictureUrl);
   background-position: center;
   background-size: cover;
+  position: relative;
 }
 
-.info {
+.item-picture > a {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.item-info {
   width: 100%;
   padding: 6px;
-  height: 40%;
+  height: 132px;
+}
+
+.item-first-row {
+  height: 50%;
+  width: 100%;
+}
+
+.item-first-row > a {
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+}
+
+.item-first-row > a:hover {
+  text-decoration: underline;
+}
+
+.item-second-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 50%;
+}
+
+.item-second-row > p {
+  flex: 1 1 100%;
+  font-size: 2rem;
 }
 </style>
