@@ -26,6 +26,8 @@ app.get('/', function (req, res) {
 (new CompanyController(getCompanyById)).register(app);
 (new ProductController(getProductById, getAllProductsByCompanyId)).register(app)
 
+app.use(express.static('public'))
+
 const port = 3000
 app.listen(port, () => {
   console.log(`🌍 Server running on port ${port}!`)
