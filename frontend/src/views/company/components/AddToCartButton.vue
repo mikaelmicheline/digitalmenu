@@ -1,5 +1,5 @@
 <template>
-  <button />
+  <button>Add to Cart</button>
 </template>
 
 <script lang="ts" setup>
@@ -7,27 +7,32 @@
 
 <style scoped>
 button {
-  background-color: inherit;
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: center;
+  background-color: var(--green);
   border: 0;
-  cursor: pointer;
-  display: inline-flex;
+  color: var(--white-1);
+  height: 44px;
+  width:100%;
+  text-wrap: nowrap;
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 34px;
-  height: 34px;
   transition: opacity 0.2s ease-in-out;
-  background-image: url(/src/assets/plus-light.svg);
-}
-
-:root[data-theme="dark"] button {
-  background-image: url(/src/assets/plus-dark.svg);
 }
 
 button:hover {
-  opacity: 0.6;
+  opacity: 0.8;
+}
+
+button::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-right: 4px;
+  background-image: url(/src/assets/plus.svg);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 </style>

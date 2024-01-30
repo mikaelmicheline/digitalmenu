@@ -23,7 +23,7 @@ li {
   min-height: 80px;
   padding: 10px;
   border-radius: 10px;
-  background-color: rgb(91, 144, 200);
+  background-color: var(--blue);
   color: var(--white-1);
   display: flex;
   flex-direction: column;
@@ -32,11 +32,11 @@ li {
 }
 
 .success {
-  background-color: rgb(94, 189, 94);
+  background-color: var(--green);
 }
 
 .warning {
-  background-color: rgb(210, 80, 80);
+  background-color: var(--red);
 }
 
 </style>

@@ -19,7 +19,6 @@ a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  height: 42px;
   background-color: var(--background-2);
 }
 

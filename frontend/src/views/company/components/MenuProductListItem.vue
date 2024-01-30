@@ -1,20 +1,28 @@
 <template>
 
   <div class="item-wrapper">
+
     <component :is="isSkeleton ? 'Skeleton' : 'div'" :class="itemClassList">
+
       <div class="item-picture">
         <router-link v-if="!isSkeleton" :to="`/company/${$route.params.companyId}/product/${data?.productId}`"></router-link>
       </div>
+
       <div class="item-info">
-        <div class="item-first-row" v-if="!isSkeleton">
-          <router-link :to="`/company/${$route.params.companyId}/product/${data?.productId}`">{{ data?.name }}</router-link>
+        <div class="item-info-first-row">
+          <router-link v-if="!isSkeleton" :to="`/company/${$route.params.companyId}/product/${data?.productId}`">{{ data?.name }}</router-link>
         </div>
-        <div class="item-second-row" v-if="!isSkeleton">
-          <p>{{ `\$${data?.salePrice}` }}</p>
+        <div class="item-info-second-row">
+          <p v-if="!isSkeleton">{{ `\$${data?.salePrice}` }}</p>
+        </div>
+        <div v-if="!isSkeleton">
           <AddToCartButton />
         </div>
+        <Skeleton class="add-to-cart-button-skeleton" v-else />
       </div>
+
     </component>
+
   </div>
 
 </template>
@@ -67,7 +75,7 @@ const pictureUrl = computed(() => {
 .item-skeleton > .item-picture {
   width: 100%;
   height: 190px;
-  padding: 12px 12px 0 12px;
+  padding: 6px 6px 0 6px;
 
 }
 
@@ -105,15 +113,14 @@ const pictureUrl = computed(() => {
 .item-info {
   width: 100%;
   padding: 6px;
-  height: 100px;
 }
 
-.item-first-row {
-  height: 46%;
+.item-info-first-row {
+  height: 46px;
   width: 100%;
 }
 
-.item-first-row > a {
+.item-info-first-row > a {
   width: 100%;
   overflow: hidden;
   display: -webkit-box;
@@ -122,20 +129,24 @@ const pictureUrl = computed(() => {
   text-overflow: ellipsis;
 }
 
-.item-first-row > a:hover {
+.item-info-first-row > a:hover {
   text-decoration: underline;
 }
 
-.item-second-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
-  height: 54%;
+.item-info-second-row {
+  height: 44px;
+  width: 100%;
 }
 
-.item-second-row > p {
-  flex: 1 1 100%;
+.item-info-second-row > p {
+  text-align: right;
   font-size: 2rem;
+}
+
+.add-to-cart-button-skeleton {
+  background-color: var(--background-1);
+  padding: 8px 12px;
+  width: 100%;
+  height: 44px;
 }
 </style>
