@@ -23,6 +23,8 @@ export default class ProductController {
           return
         }
 
+        await sleep(1500)
+
         res.json(product)
       }
     ))

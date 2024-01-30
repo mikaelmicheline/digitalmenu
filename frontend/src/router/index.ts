@@ -4,6 +4,7 @@ import NotFoundView from '../views/not-found/NotFoundView.vue'
 import CompanyView from '../views/company/CompanyView.vue'
 import CompanyMenuView from '../views/company/CompanyMenuView.vue'
 import CompanyCartView from '../views/company/CompanyCartView.vue'
+import CompanyProductView from '../views/company/CompanyProductView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -25,6 +26,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'cart',
         name: 'companyCart',
         component: CompanyCartView
+      },
+      {
+        path: 'product/:productId',
+        name: 'companyProduct',
+        component: CompanyProductView
       }
     ]
   },

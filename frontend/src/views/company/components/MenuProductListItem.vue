@@ -86,6 +86,11 @@ const pictureUrl = computed(() => {
   background-position: center;
   background-size: cover;
   position: relative;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.item-product > .item-picture:hover {
+  opacity: 0.8;
 }
 
 .item-picture > a {

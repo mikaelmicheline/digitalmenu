@@ -4,7 +4,7 @@ import ServiceResult from './ServiceResult'
 import CategoryWithProductsModel from '@/models/CategoryWithProductsModel'
 
 export default class CompanyService {
-  public static async getAllCategoriesWithProductsByCompanyId (companyId: string): Promise<ServiceResult<CategoryWithProductsModel[]>> {
+  public static async getAllCategoriesWithProducts (companyId: string): Promise<ServiceResult<CategoryWithProductsModel[]>> {
     try {
       const response = await fetch(`${config.apiUrl}company/${companyId}/product`, {
         method: 'GET'
@@ -44,5 +44,36 @@ export default class CompanyService {
     }))
 
     return categories
+  }
+
+  public static async getProduct (companyId: string, productId: string): Promise<ServiceResult<ProductModel>> {
+    try {
+      const response = await fetch(`${config.apiUrl}company/${companyId}/product/${productId}`, {
+        method: 'GET'
+      })
+
+      if (response.status === 404) {
+        return {
+          result: 'notFound'
+        }
+      }
+
+      if (response.status !== 200) {
+        return {
+          result: 'apiError'
+        }
+      }
+
+      const responseBody = await response.json()
+
+      return {
+        result: 'success',
+        content: responseBody
+      }
+    } catch {
+      return {
+        result: 'networkError'
+      }
+    }
   }
 }

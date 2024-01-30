@@ -1,4 +1,5 @@
 import CategoryWithProductsModel from '@/models/CategoryWithProductsModel'
+import ProductModel from '@/models/ProductModel'
 import { Module, GetterTree, MutationTree, ActionTree, ActionContext } from 'vuex'
 
 type ProductModuleState = {
@@ -14,6 +15,14 @@ const getters = <GetterTree<ProductModuleState, unknown>>{
     const categoryFound = state.categories.find(c => c.category === category)
     if (categoryFound) return [categoryFound]
     return []
+  },
+  getProduct: (state: ProductModuleState) => (companyId: string, productId: string): ProductModel | undefined => {
+    if (state.companyId !== companyId) return undefined
+
+    const category = state.categories.find(c => c.products.some(p => p.productId === productId))
+    if (category) {
+      return category.products.find(p => p.productId === productId)
+    }
   }
 }
 

@@ -35,7 +35,7 @@ async function getCategories (): Promise<void> {
     return
   }
 
-  const fetchedCategoriesWithProducts = await ProductService.getAllCategoriesWithProductsByCompanyId(companyId)
+  const fetchedCategoriesWithProducts = await ProductService.getAllCategoriesWithProducts(companyId)
 
   if (fetchedCategoriesWithProducts.result === 'success') {
     categories.value = fetchedCategoriesWithProducts.content.map(c => ({ ...c }))
