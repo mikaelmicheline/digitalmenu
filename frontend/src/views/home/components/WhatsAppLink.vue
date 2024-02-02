@@ -20,6 +20,7 @@ a {
   justify-content: center;
   align-items: center;
   background-color: var(--background-2);
+  text-wrap: nowrap;
 }
 
 a:hover {
