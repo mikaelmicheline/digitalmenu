@@ -1,12 +1,12 @@
 <template>
-  <Teleport to="body">
+  <Teleport v-if="isOpen" to="body">
     <div class="back"></div>
   </Teleport>
-  <Teleport to="body">
+  <Teleport v-if="isOpen" to="body">
     <div class="card-container">
       <div class="card">
         <header>
-          <p>Title ewa adfjdhd jh sgfjhsg fjhsg jfhs</p>
+          <p>{{ title }}</p>
           <BaseIconButton
             kind="button"
             :icon-light="iconLight"
@@ -21,6 +21,16 @@
 <script lang="ts" setup>
 import iconLight from '@/assets/close-light.svg'
 import iconDark from '@/assets/close-dark.svg'
+import { defineProps, withDefaults } from 'vue'
+
+interface Props {
+  title?: string
+  isOpen?: boolean
+}
+
+withDefaults(defineProps<Props>(), {
+  isOpen: false
+})
 
 function closeModal () {
   console.log('')
