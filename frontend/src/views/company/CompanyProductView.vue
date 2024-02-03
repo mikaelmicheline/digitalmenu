@@ -8,7 +8,7 @@
     </component>
 
     <div class="product-data">
-      <component :is="dataLoaded ? 'div' : 'Skeleton'" class="product-picture" @click="openModal"></component>
+      <component :is="dataLoaded ? 'div' : 'Skeleton'" class="product-picture" @click="openPictureModal"></component>
       <component :is="dataLoaded ? 'div' : 'Skeleton'" class="product-info">
         <p v-if="dataLoaded">{{ product?.description }}</p>
         <p v-if="dataLoaded"><em>only </em>{{ `\$${product?.salePrice}` }}</p>
@@ -17,7 +17,7 @@
     </div>
 
     <Teleport to="body">
-      <div @click="closeModal" class="product-picture-modal">
+      <div @click="closePictureModal" class="product-picture-modal">
         <div></div>
       </div>
     </Teleport>
@@ -40,8 +40,6 @@ const store = useStore()
 
 const dataLoaded = ref<boolean>(false)
 const product = ref<ProductModel | undefined>(undefined)
-const isModalOpen = ref<boolean>(false)
-const shouldAllowModal = ref<boolean>(window.innerWidth >= 800)
 
 async function getProduct (): Promise<void> {
   const { companyId, productId } = route.params
@@ -72,6 +70,19 @@ async function getProduct (): Promise<void> {
   dataLoaded.value = true
 }
 
+const pictureUrl = computed(() => {
+  return `url(${config.apiUrl}${product.value?.picture})`
+})
+
+// #region Picture Modal
+
+const isPictureModalOpen = ref<boolean>(false)
+const shouldAllowPictureModal = ref<boolean>(window.innerWidth >= 800)
+
+const pictureModalDisplay = computed(() => {
+  return isPictureModalOpen.value ? 'flex' : 'none'
+})
+
 onMounted(() => {
   getProduct()
   window.addEventListener('resize', onResize)
@@ -81,26 +92,20 @@ onUnmounted(() => {
   window.removeEventListener('resize', onResize)
 })
 
-const pictureUrl = computed(() => {
-  return `url(${config.apiUrl}${product.value?.picture})`
-})
-
-const modalDisplay = computed(() => {
-  return isModalOpen.value ? 'flex' : 'none'
-})
-
-function openModal () {
-  if (!shouldAllowModal.value) return
-  isModalOpen.value = true
-}
-
-function closeModal () {
-  isModalOpen.value = false
-}
-
 function onResize () {
-  shouldAllowModal.value = window.innerWidth >= 800
+  shouldAllowPictureModal.value = window.innerWidth >= 800
 }
+
+function openPictureModal () {
+  if (!shouldAllowPictureModal.value) return
+  isPictureModalOpen.value = true
+}
+
+function closePictureModal () {
+  isPictureModalOpen.value = false
+}
+
+// #endregion Picture Modal
 
 </script>
 
@@ -183,7 +188,7 @@ section {
   top: 0;
   background-color: rgba(0,0,0,0.65);
   z-index: 3;
-  display: v-bind(modalDisplay);
+  display: v-bind(pictureModalDisplay);
   justify-content: center;
   align-items: center;
 }
