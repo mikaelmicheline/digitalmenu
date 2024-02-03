@@ -14,7 +14,7 @@
         </ul>
       </nav>
 
-      <ThemeToggler />
+      <ThemeTogglerButton />
 
     </div>
 

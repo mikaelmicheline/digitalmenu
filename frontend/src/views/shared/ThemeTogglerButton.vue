@@ -1,8 +1,14 @@
 <template>
-  <button :class="selectedTheme" @click="toggleTheme"></button>
+  <BaseIconButton
+    kind="button"
+    :icon-light="iconLight"
+    :icon-dark="iconDark"
+    @click.prevent="toggleTheme" />
 </template>
 
 <script lang="ts" setup>
+import iconLight from '@/assets/light.svg'
+import iconDark from '@/assets/dark.svg'
 import { onMounted, ref } from 'vue'
 
 type AvailableThemes = 'light' | 'dark'
@@ -26,35 +32,7 @@ function toggleTheme () {
     selectedTheme.value = 'light'
   }
 }
-
 </script>
 
 <style scoped>
-button {
-  background-color: inherit;
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: center;
-  border: 0;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.light {
-  background-image: url(/src/assets/light.svg);
-}
-
-.dark {
-  background-image: url(/src/assets/dark.svg);
-}
-
-button:hover {
-  opacity: 0.6;
-}
-
 </style>

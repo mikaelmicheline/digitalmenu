@@ -2,19 +2,23 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import ThemeToggler from './views/shared/ThemeToggler.vue'
+import BaseIconButton from './views/shared/BaseIconButton.vue'
+import ThemeTogglerButton from './views/shared/ThemeTogglerButton.vue'
 import Skeleton from './views/shared/Skeleton.vue'
 import NotificationList from './views/shared/NotificationList.vue'
 import NotificationCard from './views/shared/NotificationCard.vue'
+import ModalCard from './views/shared/ModalCard.vue'
 
 const app = createApp(App)
 
 app.use(store)
 app.use(router)
 
-app.component('ThemeToggler', ThemeToggler)
+app.component('BaseIconButton', BaseIconButton)
+app.component('ThemeTogglerButton', ThemeTogglerButton)
 app.component('Skeleton', Skeleton)
 app.component('NotificationList', NotificationList)
 app.component('NotificationCard', NotificationCard)
+app.component('ModalCard', ModalCard)
 
 app.mount('#app')

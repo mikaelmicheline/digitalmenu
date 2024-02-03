@@ -7,7 +7,7 @@
       <ul>
         <li><MenuButton /></li>
         <li><CartButton /></li>
-        <li><ThemeToggler /></li>
+        <li><ThemeTogglerButton /></li>
       </ul>
     </nav>
 
