@@ -31,7 +31,7 @@ const iconDarkUrl = computed(() => {
 
 <style scoped>
 .icon-button {
-  background-color: inherit;
+  background-color: transparent;
   background-size: cover;
   background-position-x: center;
   background-position-y: center;

@@ -5,13 +5,26 @@
   <Teleport to="body">
     <div class="card-container">
       <div class="card">
-        <header></header>
+        <header>
+          <p>Title ewa adfjdhd jh sgfjhsg fjhsg jfhs</p>
+          <BaseIconButton
+            kind="button"
+            :icon-light="iconLight"
+            :icon-dark="iconDark"
+            @click.prevent="closeModal" />
+        </header>
       </div>
     </div>
   </Teleport>
 </template>
 
 <script lang="ts" setup>
+import iconLight from '@/assets/close-light.svg'
+import iconDark from '@/assets/close-dark.svg'
+
+function closeModal () {
+  console.log('')
+}
 </script>
 
 <style scoped>
@@ -38,16 +51,26 @@
 }
 
 .card {
-  width: 400px;
-  height: 400px;
-  background-color: var(--background-2);
+  min-width: 200px;
+  min-height: 200px;
+  background-color: var(--background-1);
   border-radius: 20px;
 }
 
-.card header {
-  background-color: darkcyan;
+.card > header {
+  background-color: var(--background-2);
   height: 40px;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.card > header > p {
+  background-color: transparent;
+  margin-right: 20px;
 }
 </style>

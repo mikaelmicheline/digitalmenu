@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts" setup>
-import iconLight from '@/assets/light.svg'
-import iconDark from '@/assets/dark.svg'
+import iconLight from '@/assets/theme-light.svg'
+import iconDark from '@/assets/theme-dark.svg'
 import { onMounted, ref } from 'vue'
 
 type AvailableThemes = 'light' | 'dark'
