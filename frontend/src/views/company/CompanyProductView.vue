@@ -12,7 +12,7 @@
       <component :is="dataLoaded ? 'div' : 'Skeleton'" class="product-info">
         <p v-if="dataLoaded">{{ product?.description }}</p>
         <p v-if="dataLoaded"><em>only </em>{{ `\$${product?.salePrice}` }}</p>
-        <AddToCartButton v-if="dataLoaded" />
+        <AddToCartButton v-if="dataLoaded" @click.prevent="openAddToCartModal" />
       </component>
     </div>
 
@@ -21,6 +21,11 @@
         <div></div>
       </div>
     </Teleport>
+
+    <AddToCardModal
+      :is-open="isAddToCartModalOpen"
+      :product="product"
+      @close-button-click="closeAddToCartModal" />
 
   </section>
 </template>
@@ -33,6 +38,7 @@ import { useStore } from 'vuex'
 import ProductModel from '@/models/ProductModel'
 import config from '@/config'
 import AddToCartButton from './components/AddToCartButton.vue'
+import AddToCardModal from './components/AddToCartModal.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -106,6 +112,19 @@ function closePictureModal () {
 }
 
 // #endregion Picture Modal
+
+// #region Add To Cart Modal
+
+const isAddToCartModalOpen = ref<boolean>(false)
+
+function openAddToCartModal () {
+  isAddToCartModalOpen.value = true
+}
+
+function closeAddToCartModal () {
+  isAddToCartModalOpen.value = false
+}
+// #endregion Add To Cart Modal
 
 </script>
 

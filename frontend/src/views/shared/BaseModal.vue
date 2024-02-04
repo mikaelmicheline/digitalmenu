@@ -1,6 +1,6 @@
 <template>
   <Teleport v-if="isOpen" to="body">
-    <div class="back"></div>
+    <div class="backdrop"></div>
   </Teleport>
   <Teleport v-if="isOpen" to="body">
     <div class="card-container">
@@ -11,8 +11,11 @@
             kind="button"
             :icon-light="iconLight"
             :icon-dark="iconDark"
-            @click.prevent="closeModal" />
+            @click.prevent="$emit('closeButtonClick')" />
         </header>
+        <div>
+          <slot></slot>
+        </div>
       </div>
     </div>
   </Teleport>
@@ -21,24 +24,24 @@
 <script lang="ts" setup>
 import iconLight from '@/assets/close-light.svg'
 import iconDark from '@/assets/close-dark.svg'
-import { defineProps, withDefaults } from 'vue'
+import { defineProps, withDefaults, defineEmits } from 'vue'
 
 interface Props {
   title?: string
   isOpen?: boolean
+  width?: string
 }
 
 withDefaults(defineProps<Props>(), {
-  isOpen: false
+  isOpen: false,
+  width: '90%'
 })
 
-function closeModal () {
-  console.log('')
-}
+defineEmits(['closeButtonClick'])
 </script>
 
 <style scoped>
-.back {
+.backdrop {
   position: fixed;
   z-index: 3;
   width: 100%;
@@ -61,8 +64,7 @@ function closeModal () {
 }
 
 .card {
-  min-width: 200px;
-  min-height: 200px;
+  width: v-bind(width);
   background-color: var(--background-1);
   border-radius: 20px;
 }
@@ -82,5 +84,9 @@ function closeModal () {
 .card > header > p {
   background-color: transparent;
   margin-right: 20px;
+}
+
+.card > div {
+  padding: 10px;
 }
 </style>

@@ -22,7 +22,7 @@
         Tempor quis commodo et reprehenderit irure ex sunt duis.
       </p>
 
-      <WhatsAppLink>Contact us now</WhatsAppLink>
+      <WhatsAppButton>Contact us now</WhatsAppButton>
 
     </div>
 
@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts" setup>
-import WhatsAppLink from './WhatsAppLink.vue'
+import WhatsAppButton from './WhatsAppButton.vue'
 </script>
 
 <style scoped>

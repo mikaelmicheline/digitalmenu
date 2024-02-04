@@ -6,7 +6,6 @@
     <div v-else>
       <MenuProductListCategory />
     </div>
-    <ModalCard :is-open="isAddToCartModalOpen" title="Add to Cart" />
   </section>
 </template>
 
@@ -23,7 +22,6 @@ const store = useStore()
 
 const dataLoaded = ref<boolean>(false)
 const categories = ref<CategoryWithProductsModel[]>([])
-const isAddToCartModalOpen = ref<boolean>(false)
 
 async function getCategories (): Promise<void> {
   const { companyId } = route.params

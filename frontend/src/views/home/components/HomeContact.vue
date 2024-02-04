@@ -33,7 +33,7 @@
 
       <HomeContactSubmitButton :disabled="messageSent">{{ submitFormButtonMessage }}</HomeContactSubmitButton>
       <span> or </span>
-      <WhatsAppLink>Use WhatsApp Web</WhatsAppLink>
+      <WhatsAppButton>Use WhatsApp Web</WhatsAppButton>
 
     </footer>
 
@@ -45,7 +45,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import HomeContactSubmitButton from './HomeContactSubmitButton.vue'
-import WhatsAppLink from './WhatsAppLink.vue'
+import WhatsAppButton from './WhatsAppButton.vue'
 
 const submitFormButtonMessage = ref<string>('Submit Form')
 const messageSent = ref<boolean>(false)
