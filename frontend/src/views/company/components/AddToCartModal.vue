@@ -4,7 +4,7 @@
     title="Add to Cart"
     @close-button-click="$emit('closeButtonClick')"
     width="90%"
-    max-width="800px">
+    max-width="700px">
 
       <p class="product-name">{{ product?.name }}</p>
 
@@ -41,6 +41,9 @@
 import ProductModel from '@/models/ProductModel'
 import ConfirmButton from './ConfirmButton.vue'
 import { defineProps, withDefaults, defineEmits, ref, computed, onMounted } from 'vue'
+import { useStore } from 'vuex'
+
+const store = useStore()
 
 interface Props {
   isOpen?: boolean,
@@ -51,13 +54,13 @@ const props = withDefaults(defineProps<Props>(), {
   isOpen: false
 })
 
-defineEmits(['closeButtonClick'])
+const emit = defineEmits(['closeButtonClick', 'confirmButtonClick'])
 
 const comments = ref<string>()
 const amount = ref<number>()
 
 onMounted(() => {
-  amount.value = 0
+  amount.value = 1
 })
 
 const commentsNumberOfLetters = computed(() => {
@@ -70,18 +73,27 @@ const totalPrice = computed(() => {
 
 function increaseAmount () {
   if (amount.value === undefined) amount.value = 0
-  if (amount.value === 99) return
+  if (amount.value >= 99) amount.value = 98
   amount.value++
 }
 
 function decreaseAmount () {
-  if (amount.value === undefined) amount.value = 1
-  if (amount.value === 1) return
+  if (amount.value === undefined || amount.value <= 1) amount.value = 2
   amount.value--
 }
 
 function submitForm () {
-  console.log('')
+  store.dispatch({
+    type: 'notifications/notify',
+    value: {
+      notification: {
+        message: 'PRODUCT ADDED TO CART',
+        type: 'success'
+      }
+    }
+  })
+
+  emit('confirmButtonClick')
 }
 </script>
 
@@ -89,6 +101,13 @@ function submitForm () {
 .product-name {
   margin-bottom: 20px;
   font-size: 1.4rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 .comments-wrapper {
@@ -107,6 +126,8 @@ function submitForm () {
   max-width: 100%;
   min-height: 100px;
   max-height: 200px;
+  outline: none !important;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .bottom-wrapper {
@@ -125,6 +146,28 @@ function submitForm () {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+button {
+  margin-top: 10px;
+  align-self: flex-end;
+}
+
+@media only screen and (min-width: 520px) {
+  .bottom-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+  }
+
+  .amount-wrapper,
+  .total-wrapper {
+    flex: 1 1 50%
+  }
+
+  .total-wrapper {
+    margin-left: 10px;
+  }
 }
 
 </style>

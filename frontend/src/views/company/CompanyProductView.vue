@@ -25,7 +25,8 @@
     <AddToCardModal
       :is-open="isAddToCartModalOpen"
       :product="product"
-      @close-button-click="closeAddToCartModal" />
+      @close-button-click="closeAddToCartModal"
+      @confirm-button-click="closeAddToCartModal" />
 
   </section>
 </template>
