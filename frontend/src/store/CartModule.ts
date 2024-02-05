@@ -1,6 +1,7 @@
 
 import { Module, GetterTree, MutationTree, ActionTree, ActionContext } from 'vuex'
 import CartModel from '@/models/CartModel'
+import CartProductModel from '@/models/CartProductModel'
 
 type CartModuleState = {
   cart: CartModel | undefined
@@ -24,97 +25,31 @@ const getters = <GetterTree<CartModuleState, unknown>>{
   }
 }
 
-// const mutations = <MutationTree<CartModuleState>>{
-//   setCompany: (state: CartModuleState, payload: { company: CartModel }): void => {
-//     state.company = payload.company
-//   }
-// }
+const mutations = <MutationTree<CartModuleState>>{
+  addProduct: (state: CartModuleState, payload: { companyId: string, product: CartProductModel }): void => {
+    if (!state.cart || state.cart.companyId !== payload.companyId) {
+      state.cart = {
+        companyId: payload.companyId,
+        products: []
+      }
+    }
 
-// const actions = <ActionTree<CartModuleState, unknown>>{
-//   setCompany: (context: ActionContext<CartModuleState, CartModuleState>, { value }): void => {
-//     context.commit('setCompany', value)
-//   }
-// }
+    state.cart.products.push(payload.product)
+  }
+}
+
+const actions = <ActionTree<CartModuleState, unknown>>{
+  addProduct: (context: ActionContext<CartModuleState, CartModuleState>, { value }): void => {
+    context.commit('addProduct', value)
+  }
+}
 
 const cartModule: Module<CartModuleState, unknown> = {
   namespaced: true,
   state: { cart: undefined },
-  getters
-  // mutations,
-  // actions
+  getters,
+  mutations,
+  actions
 }
 
 export default cartModule
-
-/*
-
-const mutations = <MutationTree<Carts>>{
-  increaseProductAmount: (state: Carts, payload: {companyId: string, productToIncreaseAmount: Product}): void => {
-    const { companyId, productToIncreaseAmount } = payload
-    let cart = state.carts.find(cart => cart.companyId === companyId)
-
-    if (cart === undefined) {
-      cart = {
-        companyId: companyId,
-        products: []
-      }
-      state.carts.push(cart)
-    }
-
-    const productIndex = cart.products.findIndex(listProduct => listProduct.productId === productToIncreaseAmount.productId)
-    if (productIndex > -1) {
-      cart.products[productIndex].amount += 1
-      return
-    }
-
-    cart.products.push({
-      ...productToIncreaseAmount,
-      amount: 1
-    })
-  },
-  decreaseProductAmount: (state: Carts, payload: {companyId: string, productToDecreaseAmount: Product}): void => {
-    const { companyId, productToDecreaseAmount } = payload
-    const cart = state.carts.find(cart => cart.companyId === companyId)
-
-    if (cart === undefined) {
-      return
-    }
-
-    const productIndex = cart.products.findIndex(listProduct => listProduct.productId === productToDecreaseAmount.productId)
-    if (productIndex === -1) {
-      return
-    }
-
-    cart.products[productIndex].amount -= 1
-    if (cart.products[productIndex].amount < 1) {
-      cart.products.splice(productIndex, 1)
-    }
-  },
-  removeProduct: (state: Carts, payload: {companyId: string, productToRemove: Product}): void => {
-    const { companyId, productToRemove } = payload
-    const cart = state.carts.find(cart => cart.companyId === companyId)
-
-    if (cart === undefined) {
-      return
-    }
-
-    const productIndex = cart.products.findIndex(listProduct => listProduct.productId === productToRemove.productId)
-    if (productIndex > -1) {
-      cart.products.splice(productIndex, 1)
-    }
-  }
-}
-
-const actions = <ActionTree<Carts, unknown>>{
-  increaseProductAmount: (context: ActionContext<Carts, unknown>, { value }): void => {
-    context.commit('increaseProductAmount', value)
-  },
-  decreaseProductAmount: (context: ActionContext<Carts, unknown>, { value }): void => {
-    context.commit('decreaseProductAmount', value)
-  },
-  removeProduct: (context: ActionContext<Carts, unknown>, { value }): void => {
-    context.commit('removeProduct', value)
-  }
-}
-
-*/
