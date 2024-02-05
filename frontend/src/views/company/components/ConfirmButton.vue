@@ -1,13 +1,13 @@
 <template>
   <BaseButton
-    text="Add To Cart"
+    text="Confirm"
     color="var(--green)"
-    width="100%"
+    width="160px"
     :icon="icon" />
 </template>
 
 <script lang="ts" setup>
-import icon from '@/assets/plus.svg'
+import icon from '@/assets/okay.svg'
 </script>
 
 <style scoped>

@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import BaseIconButton from './views/shared/BaseIconButton.vue'
+import BaseButton from './views/shared/BaseButton.vue'
 import ThemeTogglerButton from './views/shared/ThemeTogglerButton.vue'
 import Skeleton from './views/shared/Skeleton.vue'
 import NotificationList from './views/shared/NotificationList.vue'
@@ -15,6 +16,7 @@ app.use(store)
 app.use(router)
 
 app.component('BaseIconButton', BaseIconButton)
+app.component('BaseButton', BaseButton)
 app.component('ThemeTogglerButton', ThemeTogglerButton)
 app.component('Skeleton', Skeleton)
 app.component('NotificationList', NotificationList)
