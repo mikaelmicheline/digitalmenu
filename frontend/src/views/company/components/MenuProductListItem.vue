@@ -16,21 +16,29 @@
           <p v-if="!isSkeleton">{{ `\$${data?.salePrice}` }}</p>
         </div>
         <div v-if="!isSkeleton">
-          <AddToCartButton />
+          <AddToCartButton @click.prevent="openAddToCartModal" />
         </div>
         <Skeleton class="add-to-cart-button-skeleton" v-else />
       </div>
 
     </component>
 
+    <AddToCardModal
+      v-if="isAddToCartModalOpen"
+      :is-open="isAddToCartModalOpen"
+      :product="data"
+      @close-button-click="closeAddToCartModal"
+      @confirm-button-click="closeAddToCartModal" />
+
   </div>
 
 </template>
 
 <script lang="ts" setup>
-import { computed, defineProps, withDefaults } from 'vue'
+import { computed, defineProps, ref, withDefaults } from 'vue'
 import ProductModel from '@/models/ProductModel'
 import AddToCartButton from './AddToCartButton.vue'
+import AddToCardModal from './AddToCartModal.vue'
 import config from '@/config'
 
 type Props = {
@@ -53,6 +61,20 @@ const itemClassList = computed(() => {
 const pictureUrl = computed(() => {
   return `url(${config.apiUrl}${props.data?.picture})`
 })
+
+// #region Add To Cart Modal
+
+const isAddToCartModalOpen = ref<boolean>(false)
+
+function openAddToCartModal () {
+  isAddToCartModalOpen.value = true
+}
+
+function closeAddToCartModal () {
+  isAddToCartModalOpen.value = false
+}
+
+// #endregion Add To Cart Modal
 
 </script>
 

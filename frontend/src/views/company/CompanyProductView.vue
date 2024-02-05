@@ -125,6 +125,7 @@ function openAddToCartModal () {
 function closeAddToCartModal () {
   isAddToCartModalOpen.value = false
 }
+
 // #endregion Add To Cart Modal
 
 </script>
