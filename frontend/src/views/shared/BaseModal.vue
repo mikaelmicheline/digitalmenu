@@ -30,11 +30,13 @@ interface Props {
   title?: string
   isOpen?: boolean
   width?: string
+  maxWidth?: string
 }
 
 withDefaults(defineProps<Props>(), {
   isOpen: false,
-  width: '90%'
+  width: '100%',
+  maxWidth: '100%'
 })
 
 defineEmits(['closeButtonClick'])
@@ -65,6 +67,7 @@ defineEmits(['closeButtonClick'])
 
 .card {
   width: v-bind(width);
+  max-width: v-bind(maxWidth);
   background-color: var(--background-1);
   border-radius: 20px;
 }
