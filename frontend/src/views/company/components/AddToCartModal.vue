@@ -205,6 +205,11 @@ form {
 }
 
 @media only screen and (min-width: 520px) {
+  .product-name {
+    font-size: 1.6rem;
+    margin-bottom: 28px;
+  }
+
   .bottom-wrapper {
     flex-direction: row;
     justify-content: space-between;
@@ -213,11 +218,19 @@ form {
 
   .amount-wrapper,
   .total-wrapper {
-    flex: 1 1 50%
+    flex: 1 1 50%;
   }
 
   .total-wrapper {
     margin-left: 10px;
+  }
+}
+
+@media only screen and (min-width: 640px) {
+  .amount-wrapper > p,
+  .amount-controls > p,
+  .total-wrapper > p {
+    font-size: 1.2rem;
   }
 }
 
