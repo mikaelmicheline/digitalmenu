@@ -5,9 +5,9 @@
 
     <nav>
       <ul>
-        <li><MenuButton /></li>
-        <li><CartButton /></li>
-        <li><ThemeTogglerButton /></li>
+        <li><MenuIconButton /></li>
+        <li><CartIconButton /></li>
+        <li><ThemeTogglerIconButton /></li>
       </ul>
     </nav>
 
@@ -16,8 +16,8 @@
 
 <script lang="ts" setup>
 import { defineProps } from 'vue'
-import CartButton from '@/views/company/components/CartButton.vue'
-import MenuButton from '@/views/company/components/MenuButton.vue'
+import CartIconButton from '@/views/company/components/CartIconButton.vue'
+import MenuIconButton from '@/views/company/components/MenuIconButton.vue'
 
 interface Props {
   companyName?: string
