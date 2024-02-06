@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts" setup>
-import icon from '@/assets/plus.svg'
+import icon from '@/assets/plus-circle.svg'
 </script>
 
 <style scoped>

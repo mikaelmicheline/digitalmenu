@@ -18,10 +18,29 @@
         <div class="bottom-wrapper">
 
           <div class="amount-wrapper">
+
             <p>Amount</p>
-            <p @click="decreaseAmount">-</p>
-            <p>{{ amount }}</p>
-            <p @click="increaseAmount">+</p>
+
+            <div class="amount-controls">
+
+              <BaseIconButton
+                kind="button"
+                background-color="var(--red)"
+                :icon-light="minusIcon"
+                :icon-dark="minusIcon"
+                @click="decreaseAmount" />
+
+              <p>{{ amount }}</p>
+
+              <BaseIconButton
+                kind="button"
+                background-color="var(--green)"
+                :icon-light="plusIcon"
+                :icon-dark="plusIcon"
+                @click="increaseAmount" />
+
+            </div>
+
           </div>
 
           <div class="total-wrapper">
@@ -31,7 +50,7 @@
 
         </div>
 
-        <ConfirmButton />
+        <ConfirmButton class="confirm-button" />
       </form>
 
   </BaseModal>
@@ -42,6 +61,8 @@ import ProductModel from '@/models/ProductModel'
 import ConfirmButton from './ConfirmButton.vue'
 import { defineProps, withDefaults, defineEmits, ref, computed, onMounted } from 'vue'
 import { useStore } from 'vuex'
+import plusIcon from '@/assets/plus.svg'
+import minusIcon from '@/assets/minus.svg'
 
 const store = useStore()
 
@@ -92,6 +113,9 @@ function submitForm () {
       }
     }
   })
+
+  amount.value = 1
+  comments.value = ''
 
   emit('confirmButtonClick')
 }
@@ -148,7 +172,20 @@ form {
   align-items: center;
 }
 
-button {
+.amount-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.amount-controls > p {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+}
+
+.confirm-button {
   margin-top: 10px;
   align-self: flex-end;
 }

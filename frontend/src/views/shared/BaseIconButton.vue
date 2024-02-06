@@ -11,13 +11,15 @@ interface Props {
   to?: string
   iconLight?: string
   iconDark?: string
+  backgroundColor?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   kind: 'button',
   to: undefined,
   iconLight: undefined,
-  iconDark: undefined
+  iconDark: undefined,
+  backgroundColor: 'invisible'
 })
 
 const iconLightUrl = computed(() => {
@@ -31,7 +33,7 @@ const iconDarkUrl = computed(() => {
 
 <style scoped>
 .icon-button {
-  background-color: transparent;
+  background-color: v-bind(backgroundColor);
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
