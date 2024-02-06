@@ -6,6 +6,8 @@ import CompanyMenuView from '../views/company/CompanyMenuView.vue'
 import CompanyCartView from '../views/company/CompanyCartView.vue'
 import CompanyProductView from '../views/company/CompanyProductView.vue'
 import CompanyInfoView from '../views/company/CompanyInfoView.vue'
+import CookieNoticeView from '../views/cookie-notice/CookieNoticeView.vue'
+import PrivacyNoticeView from '../views/privacy-notice/PrivacyNoticeView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -39,6 +41,16 @@ const routes: Array<RouteRecordRaw> = [
         component: CompanyProductView
       }
     ]
+  },
+  {
+    path: '/cookie',
+    name: 'cookie',
+    component: CookieNoticeView
+  },
+  {
+    path: '/privacy',
+    name: 'privacy',
+    component: PrivacyNoticeView
   },
   {
     path: '/:notFound(.*)',

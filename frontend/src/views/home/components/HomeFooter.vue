@@ -15,8 +15,8 @@
 
     <div class="second-row">
       <div class="legal">
-        <a href="#privacy">Privacy Notice</a>
-        <a href="#cookies">Cookies</a>
+        <router-link to="/privacy">Privacy Notice</router-link>
+        <router-link to="/cookie">Cookie Notice</router-link>
       </div>
       <div class="copyright">© 2024 Digital Menu</div>
     </div>
