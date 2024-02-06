@@ -1,12 +1,12 @@
 <template>
-  <section>
+  <div class="container">
     <div v-if="dataLoaded">
       <MenuProductListCategory v-for="category in categories" :key="category.category" :data="category" :is-skeleton="false" />
     </div>
     <div v-else>
       <MenuProductListCategory />
     </div>
-  </section>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -58,7 +58,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-section > div {
+.container > div {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;

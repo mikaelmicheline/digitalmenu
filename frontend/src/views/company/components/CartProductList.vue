@@ -1,12 +1,20 @@
 <template>
-  <section>
-    <p>Yet to be implemented</p>
-  </section>
+  <div class="product-list">
+    <p>List</p>
+  </div>
 </template>
 
 <style scoped>
-section {
+
+.product-list {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
   width: 100%;
-  height: 1000px;
+}
+
+@media only screen and (min-width: 800px) {
+  .product-list {
+    flex: 1 1;
+  }
 }
 </style>

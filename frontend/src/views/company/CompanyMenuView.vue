@@ -1,5 +1,7 @@
 <template>
-  <MenuProductList />
+  <section>
+    <MenuProductList />
+  </section>
 </template>
 
 <script lang="ts" setup>
