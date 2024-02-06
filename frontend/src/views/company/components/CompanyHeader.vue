@@ -7,6 +7,7 @@
       <ul>
         <li><MenuIconButton /></li>
         <li><CartIconButton /></li>
+        <li><InfoIconButton /></li>
         <li><ThemeTogglerIconButton /></li>
       </ul>
     </nav>
@@ -18,6 +19,7 @@
 import { defineProps } from 'vue'
 import CartIconButton from '@/views/company/components/CartIconButton.vue'
 import MenuIconButton from '@/views/company/components/MenuIconButton.vue'
+import InfoIconButton from '@/views/company/components/InfoIconButton.vue'
 
 interface Props {
   companyName?: string
@@ -57,7 +59,7 @@ ul {
   align-items: center;
 }
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 520px) {
   header {
     padding: 12px 20px;
     flex-direction: row;
@@ -70,7 +72,7 @@ ul {
   }
 
   nav {
-    flex: 0 0 140px;
+    flex: 0 0 190px;
   }
 
   ul {

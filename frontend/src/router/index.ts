@@ -5,6 +5,7 @@ import CompanyView from '../views/company/CompanyView.vue'
 import CompanyMenuView from '../views/company/CompanyMenuView.vue'
 import CompanyCartView from '../views/company/CompanyCartView.vue'
 import CompanyProductView from '../views/company/CompanyProductView.vue'
+import CompanyInfoView from '../views/company/CompanyInfoView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -26,6 +27,11 @@ const routes: Array<RouteRecordRaw> = [
         path: 'cart',
         name: 'companyCart',
         component: CompanyCartView
+      },
+      {
+        path: 'info',
+        name: 'companyInfo',
+        component: CompanyInfoView
       },
       {
         path: 'product/:productId',
