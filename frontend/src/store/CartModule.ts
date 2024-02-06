@@ -13,12 +13,12 @@ const getters = <GetterTree<CartModuleState, unknown>>{
     if (state.cart.companyId !== companyId) return undefined
     return state.cart
   },
-  getCartTotalAmountBy: (state: CartModuleState) => (companyId: string): number => {
+  getCartTotalAmount: (state: CartModuleState) => (companyId: string): number => {
     if (state.cart === undefined) return 0
     if (state.cart.companyId !== companyId) return 0
     return state.cart.products.reduce((acc, cartProduct) => acc + cartProduct.amount, 0)
   },
-  getCartTotalValueBy: (state: CartModuleState) => (companyId: string): number => {
+  getCartTotalValue: (state: CartModuleState) => (companyId: string): number => {
     if (state.cart === undefined) return 0
     if (state.cart.companyId !== companyId) return 0
     return state.cart.products.reduce((acc, cartProduct) => acc + cartProduct.amount * cartProduct.product.salePrice, 0)
