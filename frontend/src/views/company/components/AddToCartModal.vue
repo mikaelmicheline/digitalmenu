@@ -63,6 +63,7 @@ import { defineProps, withDefaults, defineEmits, ref, computed, onMounted } from
 import { useStore } from 'vuex'
 import plusIcon from '@/assets/plus.svg'
 import minusIcon from '@/assets/minus.svg'
+import { v4 as uuidv4 } from 'uuid'
 
 const store = useStore()
 
@@ -109,6 +110,7 @@ function submitForm () {
     value: {
       companyId: props.product?.companyId,
       product: {
+        id: uuidv4(),
         product: props.product,
         amount: amount.value,
         comments: comments.value

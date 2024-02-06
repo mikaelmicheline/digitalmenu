@@ -10,10 +10,14 @@ type Props = {
   color?: string
   icon?: string
   width?: string
+  maxWidth?: string
+  height?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  width: '100%'
+  width: '100%',
+  maxWidth: 'unset',
+  height: '44px'
 })
 
 const iconUrl = computed(() => {
@@ -27,7 +31,8 @@ button {
   border: 0;
   color: var(--white-1);
   width: v-bind(width);
-  height: 44px;
+  max-width: v-bind(maxWidth);
+  height: v-bind(height);
   text-wrap: nowrap;
   display: flex;
   justify-content: center;

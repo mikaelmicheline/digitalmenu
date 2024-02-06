@@ -27,6 +27,12 @@ const cartHasProducts = computed(() => {
 </script>
 
 <style scoped>
+section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .not-empty {
   width: 100%;
   display: flex;
