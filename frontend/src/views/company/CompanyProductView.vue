@@ -26,6 +26,7 @@
       :is-open="isAddToCartModalOpen"
       :product="product"
       @close-button-click="closeAddToCartModal"
+      @backdrop-click="closeAddToCartModal"
       @confirm-button-click="closeAddToCartModal" />
 
   </section>

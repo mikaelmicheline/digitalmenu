@@ -3,6 +3,7 @@
     :is-open="isOpen"
     title="Add to Cart"
     @close-button-click="$emit('closeButtonClick')"
+    @backdrop-click="$emit('backDropClick')"
     width="90%"
     max-width="700px">
 
@@ -76,7 +77,7 @@ const props = withDefaults(defineProps<Props>(), {
   isOpen: false
 })
 
-const emit = defineEmits(['closeButtonClick', 'confirmButtonClick'])
+const emit = defineEmits(['closeButtonClick', 'backDropClick', 'confirmButtonClick'])
 
 const comments = ref<string>()
 const amount = ref<number>()

@@ -28,6 +28,7 @@
       :is-open="isAddToCartModalOpen"
       :product="data"
       @close-button-click="closeAddToCartModal"
+      @backdrop-click="closeAddToCartModal"
       @confirm-button-click="closeAddToCartModal" />
 
   </div>
