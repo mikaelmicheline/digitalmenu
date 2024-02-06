@@ -105,6 +105,18 @@ function decreaseAmount () {
 
 function submitForm () {
   store.dispatch({
+    type: 'cart/addProduct',
+    value: {
+      companyId: props.product?.companyId,
+      product: {
+        product: props.product,
+        amount: amount.value,
+        comments: comments.value
+      }
+    }
+  })
+
+  store.dispatch({
     type: 'notifications/notify',
     value: {
       notification: {
