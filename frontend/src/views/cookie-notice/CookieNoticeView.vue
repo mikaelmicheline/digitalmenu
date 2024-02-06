@@ -14,7 +14,6 @@ import GenericHeader from '@/views/shared/GenericHeader.vue'
 main {
   margin: 80px 10px;
   width: 80%;
-  height: 1000px;
 }
 
 h1 {
