@@ -18,7 +18,7 @@
 
         <div class="item-info">
           <p>{{data?.product.name}}</p>
-          <p>Comments: <em>{{ data?.comments ? 'YES' : 'NO' }}</em></p>
+          <p>Comments: <em>{{ data?.comments ? 'yes' : 'no' }}</em></p>
           <p>Amount: <em>{{ data?.amount }}</em></p>
           <p>Total: <em>{{ `\$${totalPrice}` }}</em></p>
         </div>
