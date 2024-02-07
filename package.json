@@ -1,0 +1,15 @@
+{
+  "name": "digital-menu",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Mikael Marcondes Micheline",    
+  "scripts": {
+    "dev": "turbo run dev --parallel"
+  },
+  "dependencies": {    
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {   
+    "turbo": "latest"
+  }
+}
