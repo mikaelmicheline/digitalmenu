@@ -27,7 +27,7 @@
 
       <div class="second-row">
         <EditProductButton />
-        <RemoveFromCartButton />
+        <RemoveFromCartButton @click="removeFromCart" />
       </div>
 
     </div>
@@ -42,6 +42,9 @@ import CartProductModel from '@/models/CartProductModel'
 import EditProductButton from './EditProductButton.vue'
 import RemoveFromCartButton from './RemoveFromCartButton.vue'
 import config from '@/config'
+import { useStore } from 'vuex'
+
+const store = useStore()
 
 type Props = {
   data?: CartProductModel
@@ -58,6 +61,16 @@ const pictureUrl = computed(() => {
 const totalPrice = computed(() => {
   return (props.data?.product?.salePrice || 0) * (props.data?.amount || 0)
 })
+
+function removeFromCart () {
+  store.dispatch({
+    type: 'cart/removeProduct',
+    value: {
+      companyId: props.data?.product?.companyId,
+      cartProductId: props.data?.id
+    }
+  })
+}
 
 </script>
 

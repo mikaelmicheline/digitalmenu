@@ -35,12 +35,24 @@ const mutations = <MutationTree<CartModuleState>>{
     }
 
     state.cart.products.push(payload.product)
+  },
+  removeProduct: (state: CartModuleState, payload: { companyId: string, cartProductId: string }): void => {
+    if (!state.cart || state.cart.companyId !== payload.companyId) {
+      return
+    }
+
+    const index = state.cart.products.findIndex((p) => p.id === payload.cartProductId)
+    if (index === -1) return
+    state.cart.products.splice(index, 1)
   }
 }
 
 const actions = <ActionTree<CartModuleState, unknown>>{
   addProduct: (context: ActionContext<CartModuleState, CartModuleState>, { value }): void => {
     context.commit('addProduct', value)
+  },
+  removeProduct: (context: ActionContext<CartModuleState, CartModuleState>, { value }): void => {
+    context.commit('removeProduct', value)
   }
 }
 

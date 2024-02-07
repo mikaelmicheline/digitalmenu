@@ -1,7 +1,7 @@
 <template>
-  <div class="product-list">
+  <transition-group tag="div" name="product-list" class="product-list">
     <CartProductListItem v-for="product in cart?.products" :key="product.id" :data="product" />
-  </div>
+  </transition-group>
 </template>
 
 <script lang="ts" setup>
@@ -29,6 +29,23 @@ const cart = computed<CartModel | undefined>(() => {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
+}
+
+.product-list-enter-from,
+.product-list-leave-to {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.product-list-enter-active,
+.product-list-leave-active {
+  transition: all 0.2s ease-in;
+}
+
+.product-list-enter-to,
+.product-list-leave-from {
+  opacity: 1;
+  transform: translateX(0px);
 }
 
 @media only screen and (min-width: 800px) {
