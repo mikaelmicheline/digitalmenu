@@ -3,6 +3,7 @@
     <NotificationCard v-for="notification in notifications"
       :key="notification.id"
       :message="notification.message"
+      :link="notification.link"
       :type="notification.type" />
   </transition-group>
 </template>
@@ -32,21 +33,30 @@ ul {
   row-gap: 10px;
 }
 
-.notification-list-enter-from,
-.notification-list-leave-to {
+.notification-list-enter-from {
   opacity: 0.4;
   transform: translateX(400px);
 }
 
-.notification-list-enter-active,
-.notification-list-leave-active {
-  transition: all 2.2s ease;
+.notification-list-enter-active {
+  transition: all 1.4s ease;
 }
 
-.notification-list-enter-to,
-.notification-list-leave-from {
+.notification-list-enter-to {
   opacity: 1;
   transform: translateX(0px);
+}
+
+.notification-list-leave-from {
+  opacity: 1;
+}
+
+.notification-list-leave-active {
+  transition: all 0.3s ease;
+}
+
+.notification-list-leave-to {
+  opacity: 0;
 }
 
 @media only screen and (min-width: 640px) {

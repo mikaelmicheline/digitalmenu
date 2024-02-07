@@ -65,8 +65,10 @@ import { useStore } from 'vuex'
 import plusIcon from '@/assets/plus.svg'
 import minusIcon from '@/assets/minus.svg'
 import { v4 as uuidv4 } from 'uuid'
+import { useRoute } from 'vue-router'
 
 const store = useStore()
+const route = useRoute()
 
 interface Props {
   isOpen?: boolean,
@@ -143,6 +145,7 @@ function submitFormAdd () {
     value: {
       notification: {
         message: 'PRODUCT ADDED TO CART',
+        link: `/company/${route.params.companyId}/cart`,
         type: 'success'
       }
     }

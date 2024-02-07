@@ -5,11 +5,13 @@ type NotificationType = 'info' | 'success' | 'warning'
 type StoredNotification = {
   id: string;
   message: string;
+  link: string;
   type: NotificationType;
 }
 
 type IncomingNotification = {
   message: string;
+  link: string;
   type: NotificationType;
 }
 
@@ -28,7 +30,7 @@ const mutations = <MutationTree<NotificationsModuleState>>{
     setTimeout(() => {
       const index = state.notifications.findIndex(n => n.id === id)
       state.notifications.splice(index, 1)
-    }, 5000)
+    }, 4000)
   }
 }
 

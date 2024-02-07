@@ -1,6 +1,7 @@
 <template>
   <li :class="type">
-    <p>{{ message }}</p>
+    <router-link v-if="link" :to="link">{{ message }}</router-link>
+    <p v-else>{{ message }}</p>
   </li>
 </template>
 
@@ -9,11 +10,13 @@ import { defineProps, withDefaults } from 'vue'
 
 type Props = {
   message: string;
+  link: string;
   type: string;
 }
 
 withDefaults(defineProps<Props>(), {
-  type: 'info'
+  type: 'info',
+  link: undefined
 })
 </script>
 
@@ -24,11 +27,20 @@ li {
   padding: 10px;
   border-radius: 10px;
   background-color: var(--blue);
-  color: var(--white-1);
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: var(--default-box-shadow);
+}
+
+li > a,
+li > p {
+  color: var(--white-1);
+  display: inline-block;
+}
+
+li > a:hover {
+  text-decoration: underline;
 }
 
 .success {
