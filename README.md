@@ -16,5 +16,5 @@ pnpm dev
 Then, access:
 
 - **http://localhost:8080**: landing page
-- **http://localhost:8080/company/MarvelousCakes**: a cake store as an example of digital menu
+- **http://localhost:8080/company/MarvelousCakes**: a cake store menu as an example 
 
