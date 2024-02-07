@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      uuid:
-        specifier: ^9.0.1
-        version: 9.0.1
     devDependencies:
       turbo:
         specifier: latest
