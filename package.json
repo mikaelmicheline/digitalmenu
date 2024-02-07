@@ -6,9 +6,6 @@
   "scripts": {
     "dev": "turbo run dev --parallel"
   },
-  "dependencies": {    
-    "uuid": "^9.0.1"
-  },
   "devDependencies": {
     "turbo": "latest"
   }
