@@ -1,7 +1,7 @@
 <template>
   <header>
 
-    <p>{{ companyName || '...' }}</p>
+    <router-link :to="`/company/${$route.params.companyId}`">{{ companyName || '...' }}</router-link>
 
     <nav>
       <ul>
@@ -40,7 +40,7 @@ header {
   padding: 10px 10px;
 }
 
-header > p {
+header > a {
   font-size: 1.72rem;
   text-align: center;
   width: 100%;
@@ -65,7 +65,7 @@ ul {
     flex-direction: row;
   }
 
-  header > p {
+  header > a {
     text-align: left;
     height: 100%;
     margin: 0 20px 0 0;
