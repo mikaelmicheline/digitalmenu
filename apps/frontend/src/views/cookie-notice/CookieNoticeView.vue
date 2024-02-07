@@ -7,7 +7,6 @@
 </template>
 
 <script lang="ts" setup>
-import GenericHeader from '@/views/shared/GenericHeader.vue'
 </script>
 
 <style scoped>

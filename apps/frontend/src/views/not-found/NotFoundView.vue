@@ -1,4 +1,5 @@
 <template>
+  <GenericHeader />
   <main>
     <section>
       <div class="img"></div>
@@ -13,7 +14,7 @@
 
 <style scoped>
 main {
-  height: 100vh;
+  height: calc(100vh - 60px);
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -37,10 +38,14 @@ section *:nth-child(3) {
 .img {
   width: 100px;
   height: 100px;
-  background-image: url(/src/assets/not-found.svg);
+  background-image: url(/src/assets/not-found-light.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+:root[data-theme='dark'] .img {
+  background-image: url(/src/assets/not-found-dark.svg);
 }
 
 button {

@@ -9,6 +9,7 @@ import Skeleton from './views/shared/Skeleton.vue'
 import NotificationList from './views/shared/NotificationList.vue'
 import NotificationCard from './views/shared/NotificationCard.vue'
 import BaseModal from './views/shared/BaseModal.vue'
+import GenericHeader from '@/views/shared/GenericHeader.vue'
 
 const app = createApp(App)
 
@@ -22,5 +23,6 @@ app.component('Skeleton', Skeleton)
 app.component('NotificationList', NotificationList)
 app.component('NotificationCard', NotificationCard)
 app.component('BaseModal', BaseModal)
+app.component('GenericHeader', GenericHeader)
 
 app.mount('#app')
