@@ -9,7 +9,8 @@
   "dependencies": {    
     "uuid": "^9.0.1"
   },
-  "devDependencies": {   
+  "devDependencies": {
+    "@types/node": "^20.11.5",   
     "turbo": "latest"
   }
 }
