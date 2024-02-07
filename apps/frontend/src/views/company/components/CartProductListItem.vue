@@ -1,46 +1,63 @@
 <template>
 
-  <div class="item-wrapper">
+  <div>
 
-    <div class="first-column">
+    <div class="item-wrapper">
 
-      <div class="item-picture-large">
-      </div>
+      <div class="first-column">
 
-    </div>
-
-    <div class="second-column">
-
-      <div class="first-row">
-
-        <div class="item-picture-small">
-        </div>
-
-        <div class="item-info">
-          <p>{{data?.product.name}}</p>
-          <p>Comments: <em>{{ data?.comments ? 'yes' : 'no' }}</em></p>
-          <p>Amount: <em>{{ data?.amount }}</em></p>
-          <p>Total: <em>{{ `\$${totalPrice}` }}</em></p>
+        <div class="item-picture-large">
         </div>
 
       </div>
 
-      <div class="second-row">
-        <EditProductButton />
-        <RemoveFromCartButton @click="removeFromCart" />
+      <div class="second-column">
+
+        <div class="first-row">
+
+          <div class="item-picture-small">
+          </div>
+
+          <div class="item-info">
+            <p>{{data?.product.name}}</p>
+            <p>Comments: <em>{{ data?.comments ? 'yes' : 'no' }}</em></p>
+            <p>Amount: <em>{{ data?.amount }}</em></p>
+            <p>Total: <em>{{ `\$${totalPrice}` }}</em></p>
+          </div>
+
+        </div>
+
+        <div class="second-row">
+          <EditProductButton @click.prevent="openManageCartProductModal" />
+          <RemoveFromCartButton @click="removeFromCart" />
+        </div>
+
       </div>
 
     </div>
+
+    <ManageCartProductModal
+      v-if="isManageCartProductModalOpen"
+      :is-open="isManageCartProductModalOpen"
+      :product="data?.product"
+      :cartProductId="data?.id"
+      :cartProductAmount="data?.amount"
+      :cartProductComments="data?.comments"
+      mode="edit"
+      @close-button-click="closeManageCartProductModal"
+      @backdrop-click="closeManageCartProductModal"
+      @confirm-button-click="closeManageCartProductModal" />
 
   </div>
 
 </template>
 
 <script lang="ts" setup>
-import { computed, defineProps, withDefaults } from 'vue'
+import { computed, defineProps, withDefaults, ref } from 'vue'
 import CartProductModel from '@/models/CartProductModel'
 import EditProductButton from './EditProductButton.vue'
 import RemoveFromCartButton from './RemoveFromCartButton.vue'
+import ManageCartProductModal from './ManageCartProductModal.vue'
 import config from '@/config'
 import { useStore } from 'vuex'
 
@@ -71,6 +88,20 @@ function removeFromCart () {
     }
   })
 }
+
+// #region Manage Cart Product Modal
+
+const isManageCartProductModalOpen = ref<boolean>(false)
+
+function openManageCartProductModal () {
+  isManageCartProductModalOpen.value = true
+}
+
+function closeManageCartProductModal () {
+  isManageCartProductModalOpen.value = false
+}
+
+// #endregion Manage Cart Product Modal
 
 </script>
 

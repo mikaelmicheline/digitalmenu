@@ -1,7 +1,7 @@
 <template>
   <BaseModal
     :is-open="isOpen"
-    title="Add to Cart"
+    :title="mode === 'add' ? 'Add to Cart' : 'Edit Product'"
     @close-button-click="$emit('closeButtonClick')"
     @backdrop-click="$emit('backDropClick')"
     width="90%"
@@ -70,11 +70,16 @@ const store = useStore()
 
 interface Props {
   isOpen?: boolean,
-  product?: ProductModel
+  product?: ProductModel,
+  mode?: 'add' | 'edit',
+  cartProductId?: string,
+  cartProductAmount?: number,
+  cartProductComments?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  isOpen: false
+  isOpen: false,
+  mode: 'add'
 })
 
 const emit = defineEmits(['closeButtonClick', 'backDropClick', 'confirmButtonClick'])
@@ -83,7 +88,8 @@ const comments = ref<string>()
 const amount = ref<number>()
 
 onMounted(() => {
-  amount.value = 1
+  amount.value = props.cartProductAmount || 1
+  comments.value = props.cartProductComments || ''
 })
 
 const commentsNumberOfLetters = computed(() => {
@@ -106,6 +112,19 @@ function decreaseAmount () {
 }
 
 function submitForm () {
+  if (props.mode === 'add') {
+    submitFormAdd()
+  } else {
+    submitFormEdit()
+  }
+
+  amount.value = 1
+  comments.value = ''
+
+  emit('confirmButtonClick')
+}
+
+function submitFormAdd () {
   store.dispatch({
     type: 'cart/addProduct',
     value: {
@@ -128,11 +147,28 @@ function submitForm () {
       }
     }
   })
+}
 
-  amount.value = 1
-  comments.value = ''
+function submitFormEdit () {
+  store.dispatch({
+    type: 'cart/editProduct',
+    value: {
+      companyId: props.product?.companyId,
+      cartProductId: props.cartProductId,
+      amount: amount.value,
+      comments: comments.value
+    }
+  })
 
-  emit('confirmButtonClick')
+  store.dispatch({
+    type: 'notifications/notify',
+    value: {
+      notification: {
+        message: 'PRODUCT EDITED',
+        type: 'success'
+      }
+    }
+  })
 }
 </script>
 

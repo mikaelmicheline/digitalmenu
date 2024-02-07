@@ -16,22 +16,23 @@
           <p v-if="!isSkeleton">{{ `\$${data?.salePrice}` }}</p>
         </div>
         <div v-if="!isSkeleton">
-          <AddToCartButton @click.prevent="openAddToCartModal" />
+          <AddToCartButton @click.prevent="openManageCartProductModal" />
         </div>
         <Skeleton class="add-to-cart-button-skeleton" v-else />
       </div>
 
     </component>
 
-    <AddToCardModal
-      v-if="isAddToCartModalOpen"
-      :is-open="isAddToCartModalOpen"
-      :product="data"
-      @close-button-click="closeAddToCartModal"
-      @backdrop-click="closeAddToCartModal"
-      @confirm-button-click="closeAddToCartModal" />
-
   </div>
+
+  <ManageCartProductModal
+      v-if="isManageCartProductModalOpen"
+      :is-open="isManageCartProductModalOpen"
+      :product="data"
+      mode="add"
+      @close-button-click="closeManageCartProductModal"
+      @backdrop-click="closeManageCartProductModal"
+      @confirm-button-click="closeManageCartProductModal" />
 
 </template>
 
@@ -39,7 +40,7 @@
 import { computed, defineProps, ref, withDefaults } from 'vue'
 import ProductModel from '@/models/ProductModel'
 import AddToCartButton from './AddToCartButton.vue'
-import AddToCardModal from './AddToCartModal.vue'
+import ManageCartProductModal from './ManageCartProductModal.vue'
 import config from '@/config'
 
 type Props = {
@@ -63,19 +64,19 @@ const pictureUrl = computed(() => {
   return `url(${config.apiUrl}${props.data?.picture})`
 })
 
-// #region Add To Cart Modal
+// #region Manage Cart Product Modal
 
-const isAddToCartModalOpen = ref<boolean>(false)
+const isManageCartProductModalOpen = ref<boolean>(false)
 
-function openAddToCartModal () {
-  isAddToCartModalOpen.value = true
+function openManageCartProductModal () {
+  isManageCartProductModalOpen.value = true
 }
 
-function closeAddToCartModal () {
-  isAddToCartModalOpen.value = false
+function closeManageCartProductModal () {
+  isManageCartProductModalOpen.value = false
 }
 
-// #endregion Add To Cart Modal
+// #endregion Manage Cart Product Modal
 
 </script>
 

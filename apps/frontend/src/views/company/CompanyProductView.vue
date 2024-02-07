@@ -12,7 +12,7 @@
       <component :is="dataLoaded ? 'div' : 'Skeleton'" class="product-info">
         <p v-if="dataLoaded">{{ product?.description }}</p>
         <p v-if="dataLoaded"><em>only </em>{{ `\$${product?.salePrice}` }}</p>
-        <AddToCartButton v-if="dataLoaded" @click.prevent="openAddToCartModal" />
+        <AddToCartButton v-if="dataLoaded" @click.prevent="openManageCartProductModal" />
       </component>
     </div>
 
@@ -22,12 +22,13 @@
       </div>
     </Teleport>
 
-    <AddToCardModal
-      :is-open="isAddToCartModalOpen"
+    <ManageCartProductModal
+      :is-open="isManageCartProductModalOpen"
       :product="product"
-      @close-button-click="closeAddToCartModal"
-      @backdrop-click="closeAddToCartModal"
-      @confirm-button-click="closeAddToCartModal" />
+      mode="add"
+      @close-button-click="closeManageCartProductModal"
+      @backdrop-click="closeManageCartProductModal"
+      @confirm-button-click="closeManageCartProductModal" />
 
   </section>
 </template>
@@ -40,7 +41,7 @@ import { useStore } from 'vuex'
 import ProductModel from '@/models/ProductModel'
 import config from '@/config'
 import AddToCartButton from './components/AddToCartButton.vue'
-import AddToCardModal from './components/AddToCartModal.vue'
+import ManageCartProductModal from './components/ManageCartProductModal.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -115,19 +116,19 @@ function closePictureModal () {
 
 // #endregion Picture Modal
 
-// #region Add To Cart Modal
+// #region Manage Cart Product Modal
 
-const isAddToCartModalOpen = ref<boolean>(false)
+const isManageCartProductModalOpen = ref<boolean>(false)
 
-function openAddToCartModal () {
-  isAddToCartModalOpen.value = true
+function openManageCartProductModal () {
+  isManageCartProductModalOpen.value = true
 }
 
-function closeAddToCartModal () {
-  isAddToCartModalOpen.value = false
+function closeManageCartProductModal () {
+  isManageCartProductModalOpen.value = false
 }
 
-// #endregion Add To Cart Modal
+// #endregion Manage Cart Product Modal
 
 </script>
 
