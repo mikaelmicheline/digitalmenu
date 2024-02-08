@@ -60,6 +60,20 @@ const routes: Array<RouteRecordRaw> = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
+  scrollBehavior (to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth'
+      }
+    }
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ left: 0, top: 0, behavior: 'smooth' })
+      }, 200)
+    })
+  },
   routes
 })
 

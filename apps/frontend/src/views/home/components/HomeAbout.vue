@@ -3,30 +3,30 @@
 
   <h2>About</h2>
 
-  <div class="about-content">
+    <div class="about-content">
 
-    <div class="about-image-container">
-      <div class="about-image"></div>
+      <div class="about-image-container">
+        <div class="about-image"></div>
+      </div>
+
+      <div class="about-text">
+
+        <p>
+          Amet magna ipsum id esse mollit <em>reprehenderit</em> est non elit aute labore.
+          Exercitation sit nisi aute excepteur. Do officia id amet adipisicing tempor cillum.
+          Commodo culpa aliquip non irure sint irure <em>excepteur</em> ex.
+        </p>
+        <p>
+          Est enim aliquip ullamco eu. Nisi dolor ex adipisicing <em>tempor</em> cupidatat
+          cupidatat duis sunt. Irure <em>labore minim</em> sint.
+          Tempor quis commodo et reprehenderit irure ex sunt duis.
+        </p>
+
+        <WhatsAppButton>Contact us now</WhatsAppButton>
+
+      </div>
+
     </div>
-
-    <div class="about-text">
-
-      <p>
-        Amet magna ipsum id esse mollit <em>reprehenderit</em> est non elit aute labore.
-        Exercitation sit nisi aute excepteur. Do officia id amet adipisicing tempor cillum.
-        Commodo culpa aliquip non irure sint irure <em>excepteur</em> ex.
-      </p>
-      <p>
-        Est enim aliquip ullamco eu. Nisi dolor ex adipisicing <em>tempor</em> cupidatat
-        cupidatat duis sunt. Irure <em>labore minim</em> sint.
-        Tempor quis commodo et reprehenderit irure ex sunt duis.
-      </p>
-
-      <WhatsAppButton>Contact us now</WhatsAppButton>
-
-    </div>
-
-  </div>
 
   </section>
 </template>

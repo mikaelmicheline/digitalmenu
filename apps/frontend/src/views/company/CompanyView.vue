@@ -12,7 +12,7 @@
 
   </main>
 
-  <CompanyFooter></CompanyFooter>
+  <GenericFooter :display-powered-by="true"></GenericFooter>
 
   <NotificationList />
 
@@ -20,7 +20,6 @@
 
 <script lang="ts" setup>
 import CompanyHeader from '@/views/company/components/CompanyHeader.vue'
-import CompanyFooter from '@/views/company/components/CompanyFooter.vue'
 import CompanyModel from '@/models/CompanyModel'
 import CompanyService from '@/services/CompanyService'
 import { useStore } from 'vuex'

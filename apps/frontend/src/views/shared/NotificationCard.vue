@@ -10,7 +10,7 @@ import { defineProps, withDefaults } from 'vue'
 
 type Props = {
   message: string;
-  link: string;
+  link?: string;
   type: string;
 }
 

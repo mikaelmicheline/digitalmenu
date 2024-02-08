@@ -10,6 +10,7 @@ import NotificationList from './views/shared/NotificationList.vue'
 import NotificationCard from './views/shared/NotificationCard.vue'
 import BaseModal from './views/shared/BaseModal.vue'
 import GenericHeader from '@/views/shared/GenericHeader.vue'
+import GenericFooter from '@/views/shared/GenericFooter.vue'
 
 const app = createApp(App)
 
@@ -24,5 +25,6 @@ app.component('NotificationList', NotificationList)
 app.component('NotificationCard', NotificationCard)
 app.component('BaseModal', BaseModal)
 app.component('GenericHeader', GenericHeader)
+app.component('GenericFooter', GenericFooter)
 
 app.mount('#app')

@@ -3,7 +3,7 @@
 
     <div class="first-row">
       <div class="title">
-        <p>powered by</p>
+        <p v-if="displayPoweredBy">powered by</p>
         <p>
           <router-link to="/">Digital Menu</router-link>
         </p>
@@ -26,6 +26,15 @@
 </template>
 
 <script lang="ts" setup>
+import { defineProps, withDefaults } from 'vue'
+
+type Props = {
+  displayPoweredBy: boolean
+}
+
+withDefaults(defineProps<Props>(), {
+  displayPoweredBy: true
+})
 </script>
 
 <style scoped>

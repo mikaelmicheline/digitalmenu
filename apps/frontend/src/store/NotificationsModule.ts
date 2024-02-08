@@ -5,13 +5,13 @@ type NotificationType = 'info' | 'success' | 'warning'
 type StoredNotification = {
   id: string;
   message: string;
-  link: string;
+  link?: string | undefined;
   type: NotificationType;
 }
 
 type IncomingNotification = {
   message: string;
-  link: string;
+  link?: string | undefined;
   type: NotificationType;
 }
 
